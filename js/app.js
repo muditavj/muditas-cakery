@@ -51,9 +51,8 @@
   const TOTAL = ALL.length;
 
   /* real photos: prefer a local image (images/<slug>.jpg) when we have one */
-  const IMGSET = new Set(window.IMG_LOCAL || []);
-  const imgFor = (item, cat) => IMGSET.has(item._slug) ? "images/" + item._slug + ".jpg" : (item.image || cat.image);
-  const heroImg = (cat) => { for (const it of cat.items) if (IMGSET.has(it._slug)) return "images/" + it._slug + ".jpg"; return cat.image; };
+  const imgFor = (item, cat) => item.image || cat.image;
+  const heroImg = (cat) => { const it = cat.items.find((i) => i.image); return it ? it.image : cat.image; };
 
   /* ------------------------------------------------------------ WhatsApp links */
   const waGeneral = `https://wa.me/${SITE.contact.whatsapp}?text=${encodeURIComponent("Hi Mudita's Cakery! I'd like to place an order.")}`;
@@ -124,7 +123,7 @@
     const brandTitle = `<em>${esc(parts[0])}</em>${parts.length > 1 ? " " + esc(parts.slice(1).join(" ")) : ""}`;
     const cards = SITE.categories.map((cat) => {
       const st = cstyle(cat.id);
-      const pics = cat.items.filter((i) => IMGSET.has(i._slug)).map((i) => "images/" + i._slug + ".jpg");
+      const pics = cat.items.filter((i) => i.image).map((i) => i.image);
       const hero = pics[0] || cat.image;
       const thumbs = pics.slice(1, 4);
       while (thumbs.length < 3) thumbs.push(pics[0] || cat.image);

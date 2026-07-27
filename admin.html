@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex" />
+<title>Mudita's Cakery — Admin</title>
+<style>
+  :root{ --bg:#f7f3f0; --surface:#fff; --ink:#241b20; --muted:#8b7a80; --line:rgba(36,27,32,.14);
+    --berry:#c0304a; --berry-d:#9e2439; --green:#22c55e; --r:14px;
+    --font:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--ink); font-family:var(--font); line-height:1.5; }
+  a{ color:var(--berry); }
+  button{ font:inherit; cursor:pointer; }
+  .topbar{ position:sticky; top:0; z-index:5; display:flex; align-items:center; gap:1rem; justify-content:space-between;
+    background:var(--surface); border-bottom:1px solid var(--line); padding:.8rem 1.1rem; flex-wrap:wrap; }
+  .brand{ font-weight:700; display:flex; align-items:center; gap:.5rem; }
+  .brand svg{ width:24px; height:24px; }
+  .top-actions{ display:flex; align-items:center; gap:.6rem; flex-wrap:wrap; }
+  .status{ font-size:.85rem; color:var(--muted); }
+  .btn{ border:1px solid var(--line); background:var(--surface); color:var(--ink); border-radius:100px; padding:.55rem 1rem; font-weight:600; font-size:.85rem; }
+  .btn:hover{ border-color:var(--ink); }
+  .btn--primary{ background:var(--berry); color:#fff; border-color:var(--berry); }
+  .btn--primary:hover{ background:var(--berry-d); border-color:var(--berry-d); }
+  .btn--primary[disabled]{ opacity:.5; cursor:not-allowed; }
+  .btn--ghost{ background:transparent; }
+  .wrap{ max-width:920px; margin:0 auto; padding:1.2rem 1.1rem 5rem; }
+  .toolbar{ display:flex; gap:.7rem; align-items:center; flex-wrap:wrap; margin-bottom:1.2rem; }
+  select,input,textarea{ font:inherit; color:var(--ink); background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:.55rem .7rem; width:100%; }
+  select{ max-width:280px; }
+  label{ font-size:.78rem; font-weight:600; color:var(--muted); display:block; margin:.7rem 0 .25rem; letter-spacing:.02em; }
+  .cat{ margin-bottom:1.8rem; }
+  .cat h2{ font-size:1.15rem; margin:0 0 .2rem; }
+  .cat p{ margin:0 0 .8rem; color:var(--muted); font-size:.85rem; }
+  .items{ display:grid; grid-template-columns:1fr; gap:.6rem; }
+  @media(min-width:640px){ .items{ grid-template-columns:1fr 1fr; } }
+  .item{ display:flex; gap:.8rem; align-items:center; background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:.6rem; }
+  .item img{ width:56px; height:56px; border-radius:10px; object-fit:cover; flex:none; background:#eee; }
+  .item__b{ flex:1; min-width:0; }
+  .item__n{ font-weight:600; }
+  .item__p{ font-size:.82rem; color:var(--berry); font-weight:600; }
+  .item__x{ display:flex; gap:.4rem; }
+  .icon-btn{ border:1px solid var(--line); background:var(--surface); border-radius:9px; padding:.35rem .55rem; font-size:.78rem; font-weight:600; }
+  .icon-btn.del{ color:var(--berry); }
+  .add-row{ margin-top:.7rem; }
+
+  /* modal */
+  .overlay{ position:fixed; inset:0; background:rgba(20,14,17,.5); display:none; align-items:flex-start; justify-content:center; padding:1.2rem; overflow:auto; z-index:20; }
+  .overlay.open{ display:flex; }
+  .modal{ background:var(--surface); border-radius:18px; width:min(560px,100%); padding:1.3rem; margin:auto; }
+  .modal h3{ margin:0 0 .3rem; }
+  .row2{ display:grid; grid-template-columns:1fr 1fr; gap:.6rem; }
+  .sizes-row{ display:grid; grid-template-columns:1fr 1fr auto; gap:.5rem; margin-bottom:.5rem; align-items:center; }
+  .tags{ display:flex; flex-wrap:wrap; gap:.5rem; margin-top:.3rem; }
+  .tags label{ display:inline-flex; align-items:center; gap:.35rem; margin:0; font-weight:500; color:var(--ink); background:var(--bg); border:1px solid var(--line); border-radius:100px; padding:.35rem .7rem; cursor:pointer; }
+  .tags input{ width:auto; }
+  .modal__foot{ display:flex; justify-content:space-between; gap:.6rem; margin-top:1.2rem; }
+  .preview{ display:flex; align-items:center; gap:.7rem; margin-top:.4rem; }
+  .preview img{ width:64px; height:64px; border-radius:10px; object-fit:cover; background:#eee; }
+  .hint{ font-size:.78rem; color:var(--muted); margin-top:.3rem; }
+  .gate{ max-width:560px; margin:3rem auto; background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:1.6rem; }
+  .gate h1{ margin:.2rem 0 .6rem; font-size:1.4rem; }
+  .gate ol{ padding-left:1.2rem; color:var(--muted); font-size:.9rem; }
+  .gate ol b{ color:var(--ink); }
+  .toast{ position:fixed; left:50%; bottom:1.2rem; transform:translateX(-50%); background:var(--ink); color:#fff; padding:.7rem 1.1rem; border-radius:100px; font-size:.88rem; opacity:0; transition:opacity .3s, transform .3s; pointer-events:none; z-index:50; }
+  .toast.show{ opacity:1; transform:translateX(-50%) translateY(-4px); }
+  .toast.err{ background:var(--berry-d); }
+  .hidden{ display:none !important; }
+</style>
+</head>
+<body>
+  <div class="topbar">
+    <span class="brand">
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="16" y1="8.5" x2="16" y2="5.6"/><circle cx="16" cy="4.2" r="2" fill="#c0304a" stroke="none"/><rect x="10.5" y="9" width="11" height="6.5" rx="2"/><rect x="6" y="15.5" width="20" height="10.5" rx="2.5"/><line x1="3.6" y1="26" x2="28.4" y2="26"/></svg>
+      Mudita's Cakery · Admin
+    </span>
+    <div class="top-actions">
+      <span class="status" id="status"></span>
+      <a class="btn btn--ghost" href="/" target="_blank" rel="noopener">View site ↗</a>
+      <button class="btn btn--ghost" id="signout">Sign out</button>
+      <button class="btn btn--primary" id="publish" disabled>Publish changes</button>
+    </div>
+  </div>
+
+  <!-- token gate -->
+  <div class="wrap gate hidden" id="gate">
+    <h1>One-time setup 🔑</h1>
+    <p>To let this page save changes to your website, paste a GitHub access key below. You only do this once per device.</p>
+    <ol>
+      <li>Open <a href="https://github.com/settings/tokens?type=beta" target="_blank" rel="noopener">github.com/settings/tokens</a> (fine-grained tokens) → <b>Generate new token</b>.</li>
+      <li>Name it <b>cakery-admin</b>. Under <b>Repository access</b> → <b>Only select repositories</b> → choose <b>muditas-cakery</b>.</li>
+      <li>Under <b>Permissions → Repository permissions → Contents</b> → set to <b>Read and write</b>.</li>
+      <li>Click <b>Generate token</b>, copy it, and paste it here:</li>
+    </ol>
+    <label for="tok">GitHub access key</label>
+    <input id="tok" type="password" placeholder="github_pat_..." autocomplete="off" />
+    <div class="modal__foot">
+      <span class="hint">Stored only in this browser. Never shared.</span>
+      <button class="btn btn--primary" id="saveTok">Save &amp; continue</button>
+    </div>
+  </div>
+
+  <!-- editor -->
+  <div class="wrap hidden" id="app">
+    <div class="toolbar">
+      <div>
+        <label style="margin:0">Jump to category</label>
+        <select id="jump"></select>
+      </div>
+    </div>
+    <div id="list"></div>
+  </div>
+
+  <!-- item modal -->
+  <div class="overlay" id="overlay">
+    <div class="modal">
+      <h3 id="mTitle">Edit item</h3>
+      <p class="hint" id="mSub"></p>
+      <label>Name</label>
+      <input id="fName" placeholder="e.g. Chocolate Truffle" />
+      <label>Category</label>
+      <select id="fCat"></select>
+      <label>Pricing</label>
+      <div class="tags" style="margin-bottom:.5rem">
+        <label><input type="radio" name="pmode" value="single" id="pmSingle" /> Single price</label>
+        <label><input type="radio" name="pmode" value="sizes" id="pmSizes" /> Multiple sizes</label>
+      </div>
+      <div id="singleWrap">
+        <input id="fPrice" type="number" inputmode="numeric" placeholder="Price in ₹ (e.g. 700)" />
+      </div>
+      <div id="sizesWrap" class="hidden">
+        <div id="sizesRows"></div>
+        <button class="btn btn--ghost" id="addSize" type="button">+ Add size</button>
+      </div>
+      <label>Unit / note <span style="font-weight:400">(optional, e.g. “per 500g”, “box of 6”)</span></label>
+      <input id="fUnit" placeholder="per 500g" />
+      <label>Description</label>
+      <textarea id="fDesc" rows="2" placeholder="A short, tempting description"></textarea>
+      <label>Badges</label>
+      <div class="tags" id="fTags">
+        <label><input type="checkbox" value="bestseller" /> Bestseller</label>
+        <label><input type="checkbox" value="signature" /> Signature</label>
+        <label><input type="checkbox" value="seasonal" /> Seasonal</label>
+        <label><input type="checkbox" value="new" /> New</label>
+        <label><input type="checkbox" value="sugarfree" /> Sugar-free</label>
+      </div>
+      <label>Photo</label>
+      <div class="preview">
+        <img id="fImgPrev" alt="" />
+        <div>
+          <input id="fImg" type="file" accept="image/*" style="border:none;padding:0" />
+          <div class="hint">Leave empty to keep the current photo.</div>
+        </div>
+      </div>
+      <div class="modal__foot">
+        <button class="btn btn--ghost" id="mCancel" type="button">Cancel</button>
+        <button class="btn btn--primary" id="mSave" type="button">Save item</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="js/menu-data.js"></script>
+  <script>
+  (function(){
+    "use strict";
+    var OWNER="muditavj", REPO="muditas-cakery", BRANCH="main", FILE="js/menu-data.js";
+    var API="https://api.github.com/repos/"+OWNER+"/"+REPO+"/contents/";
+    var $=function(s){return document.querySelector(s)}, $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+    var token=localStorage.getItem("cakery_gh_token")||"";
+    var S=null, dirty=false, editing=null; // editing = {catIdx, itemIdx|null}
+
+    function slugify(s){ return s.toLowerCase().replace(/["'’]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/(^-|-$)/g,""); }
+    function clone(o){ return JSON.parse(JSON.stringify(o)); }
+    function toast(msg,err){ var t=$("#toast"); t.textContent=msg; t.className="toast show"+(err?" err":""); setTimeout(function(){t.className="toast";},err?4200:2600); }
+    function setStatus(m){ $("#status").textContent=m||""; }
+    function markDirty(){ dirty=true; $("#publish").disabled=false; setStatus("Unsaved changes — hit Publish"); }
+
+    function b64utf8(str){ var bytes=new TextEncoder().encode(str), bin=""; for(var i=0;i<bytes.length;i++) bin+=String.fromCharCode(bytes[i]); return btoa(bin); }
+    function money(v){ return "₹"+v; }
+    function priceLabel(it){
+      if(Array.isArray(it.price)){ return it.price.map(function(v){return v.label+" "+money(v.value)}).join(" · "); }
+      return money(it.price)+(it.unit?(" · "+it.unit):"");
+    }
+    function itemImg(it,cat){ return it._preview || it.image || cat.image || ""; }
+
+    /* ---------- render ---------- */
+    function render(){
+      var list=$("#list"), jump=$("#jump"); list.innerHTML=""; jump.innerHTML="";
+      S.categories.forEach(function(cat,ci){
+        var opt=document.createElement("option"); opt.value="cat-"+ci; opt.textContent=cat.name+" ("+cat.items.length+")"; jump.appendChild(opt);
+        var sec=document.createElement("div"); sec.className="cat"; sec.id="cat-"+ci;
+        var items=cat.items.map(function(it,ii){
+          return '<div class="item">'+
+            '<img src="'+(itemImg(it,cat)||"")+'" alt="" onerror="this.style.visibility=\'hidden\'"/>'+
+            '<div class="item__b"><div class="item__n">'+esc(it.name)+'</div><div class="item__p">'+esc(priceLabel(it))+'</div></div>'+
+            '<div class="item__x"><button class="icon-btn" data-edit="'+ci+'.'+ii+'">Edit</button>'+
+            '<button class="icon-btn del" data-del="'+ci+'.'+ii+'">Delete</button></div></div>';
+        }).join("");
+        sec.innerHTML='<h2>'+esc(cat.name)+'</h2><p>'+esc(cat.kicker||"")+'</p><div class="items">'+items+'</div>'+
+          '<div class="add-row"><button class="btn" data-add="'+ci+'">+ Add item to '+esc(cat.name)+'</button></div>';
+        list.appendChild(sec);
+      });
+    }
+    function esc(s){ return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
+
+    /* ---------- editor modal ---------- */
+    function openEditor(ci,ii){
+      editing={ci:ci, ii:ii};
+      var cat=S.categories[ci];
+      var it = ii==null ? {name:"",price:0,desc:""} : clone(cat.items[ii]);
+      editing.draft=it;
+      $("#mTitle").textContent = ii==null ? "Add item" : "Edit item";
+      $("#mSub").textContent = cat.name;
+      $("#fName").value=it.name||"";
+      // categories select
+      var fc=$("#fCat"); fc.innerHTML=S.categories.map(function(c,i){return '<option value="'+i+'"'+(i===ci?" selected":"")+'>'+esc(c.name)+'</option>';}).join("");
+      // pricing
+      var isSizes=Array.isArray(it.price);
+      $("#pmSingle").checked=!isSizes; $("#pmSizes").checked=isSizes;
+      $("#fPrice").value=isSizes?"":(it.price||"");
+      renderSizes(isSizes?it.price:[{label:"",value:""}]);
+      togglePmode();
+      $("#fUnit").value=it.unit||"";
+      $("#fDesc").value=it.desc||"";
+      var tags=it.tags||[];
+      $$("#fTags input").forEach(function(cb){ cb.checked=tags.indexOf(cb.value)>=0; });
+      $("#fImg").value="";
+      var prev=itemImg(it,cat); var pv=$("#fImgPrev"); if(prev){pv.src=prev;pv.style.visibility="";}else{pv.removeAttribute("src");pv.style.visibility="hidden";}
+      $("#overlay").classList.add("open");
+    }
+    function renderSizes(arr){
+      $("#sizesRows").innerHTML = (arr&&arr.length?arr:[{label:"",value:""}]).map(function(s){
+        return '<div class="sizes-row"><input class="sz-l" placeholder="Label e.g. 500g" value="'+esc(s.label||"")+'"/>'+
+          '<input class="sz-v" type="number" placeholder="₹" value="'+(s.value===""||s.value==null?"":s.value)+'"/>'+
+          '<button class="icon-btn del sz-x" type="button">✕</button></div>';
+      }).join("");
+    }
+    function togglePmode(){ var sizes=$("#pmSizes").checked; $("#sizesWrap").classList.toggle("hidden",!sizes); $("#singleWrap").classList.toggle("hidden",sizes); }
+
+    function saveEditor(){
+      var d=editing.draft;
+      var name=$("#fName").value.trim(); if(!name){ toast("Please enter a name",true); return; }
+      var newCat=parseInt($("#fCat").value,10);
+      var item={ name:name };
+      if($("#pmSizes").checked){
+        var sizes=[]; $$("#sizesRows .sizes-row").forEach(function(r){
+          var l=r.querySelector(".sz-l").value.trim(), v=parseInt(r.querySelector(".sz-v").value,10);
+          if(l&&!isNaN(v)) sizes.push({label:l,value:v});
+        });
+        if(!sizes.length){ toast("Add at least one size",true); return; }
+        item.price=sizes;
+      } else {
+        var p=parseInt($("#fPrice").value,10); if(isNaN(p)){ toast("Enter a price",true); return; } item.price=p;
+      }
+      var unit=$("#fUnit").value.trim(); if(unit) item.unit=unit;
+      var desc=$("#fDesc").value.trim(); if(desc) item.desc=desc;
+      var tags=$$("#fTags input").filter(function(c){return c.checked}).map(function(c){return c.value}); if(tags.length) item.tags=tags;
+      // image
+      if(d._newImageData){ item._newImageData=d._newImageData; item._preview=d._preview; item.image=d.image; }
+      else if(d.image){ item.image=d.image; }
+      // apply
+      var from=S.categories[editing.ci];
+      if(editing.ii==null){ S.categories[newCat].items.push(item); }
+      else if(newCat===editing.ci){ from.items[editing.ii]=item; }
+      else { from.items.splice(editing.ii,1); S.categories[newCat].items.push(item); }
+      closeEditor(); render(); markDirty();
+    }
+    function closeEditor(){ $("#overlay").classList.remove("open"); editing=null; }
+
+    /* ---------- publish ---------- */
+    function ghHeaders(){ return { "Authorization":"Bearer "+token, "Accept":"application/vnd.github+json", "X-GitHub-Api-Version":"2022-11-28" }; }
+    function getSha(path){
+      return fetch(API+encodeURI(path)+"?ref="+BRANCH,{headers:ghHeaders()}).then(function(r){
+        if(r.status===404) return null; if(!r.ok) throw new Error("GitHub read failed ("+r.status+")"); return r.json().then(function(j){return j.sha;});
+      });
+    }
+    function putFile(path,contentB64,message,sha){
+      var body={ message:message, content:contentB64, branch:BRANCH }; if(sha) body.sha=sha;
+      return fetch(API+encodeURI(path),{method:"PUT",headers:ghHeaders(),body:JSON.stringify(body)}).then(function(r){
+        if(!r.ok) return r.json().then(function(j){ throw new Error((j&&j.message)||("Save failed "+r.status)); }); return r.json();
+      });
+    }
+    function serialize(){
+      var out=clone(S);
+      out.categories.forEach(function(c){ c.items.forEach(function(it){ delete it._newImageData; delete it._preview; }); });
+      var header="/* ============================================================================\n"+
+        "   MUDITA'S CAKERY — menu data (managed by the Admin editor)\n"+
+        "   ============================================================================ */\n";
+      return header+"window.SITE = "+JSON.stringify(out,null,2)+";\n";
+    }
+    function publish(){
+      if(!dirty){ toast("Nothing to publish"); return; }
+      $("#publish").disabled=true; setStatus("Publishing…");
+      // collect new images
+      var uploads=[];
+      S.categories.forEach(function(c){ c.items.forEach(function(it){ if(it._newImageData){ uploads.push({item:it, path:it.image, data:it._newImageData}); } }); });
+      var chain=Promise.resolve();
+      uploads.forEach(function(u){
+        chain=chain.then(function(){ setStatus("Uploading photo…"); return getSha(u.path); })
+          .then(function(sha){ return putFile(u.path, u.data, "admin: image "+u.path, sha); })
+          .then(function(){ delete u.item._newImageData; delete u.item._preview; });
+      });
+      chain.then(function(){ setStatus("Saving menu…"); return getSha(FILE); })
+        .then(function(sha){ return putFile(FILE, b64utf8(serialize()), "admin: update menu", sha); })
+        .then(function(){ dirty=false; $("#publish").disabled=true; setStatus("Published ✓ — live in ~1 minute"); toast("Published! Your site updates in ~1 minute 🎂"); render(); })
+        .catch(function(e){ $("#publish").disabled=false; setStatus("Publish failed"); toast(e.message||"Publish failed",true); });
+    }
+
+    /* ---------- events ---------- */
+    document.addEventListener("click",function(e){
+      var t=e.target;
+      if(t.dataset.edit){ var a=t.dataset.edit.split("."); openEditor(+a[0],+a[1]); }
+      else if(t.dataset.del){ var b=t.dataset.del.split("."); if(confirm("Delete this item?")){ S.categories[+b[0]].items.splice(+b[1],1); render(); markDirty(); } }
+      else if(t.dataset.add){ openEditor(+t.dataset.add,null); }
+      else if(t.classList.contains("sz-x")){ t.closest(".sizes-row").remove(); }
+    });
+    $("#jump").addEventListener("change",function(){ var el=document.getElementById(this.value); if(el) el.scrollIntoView({behavior:"smooth"}); });
+    $("#pmSingle").addEventListener("change",togglePmode); $("#pmSizes").addEventListener("change",togglePmode);
+    $("#addSize").addEventListener("click",function(){ var d=document.createElement("div"); d.className="sizes-row"; d.innerHTML='<input class="sz-l" placeholder="Label e.g. 500g"/><input class="sz-v" type="number" placeholder="₹"/><button class="icon-btn del sz-x" type="button">✕</button>'; $("#sizesRows").appendChild(d); });
+    $("#mCancel").addEventListener("click",closeEditor);
+    $("#mSave").addEventListener("click",saveEditor);
+    $("#overlay").addEventListener("click",function(e){ if(e.target===this) closeEditor(); });
+    $("#fImg").addEventListener("change",function(){
+      var f=this.files[0]; if(!f||!editing) return;
+      var rd=new FileReader();
+      rd.onload=function(){
+        var dataUrl=rd.result, base=dataUrl.split(",")[1];
+        var cat=S.categories[+($("#fCat").value)];
+        var slug=cat.id+"-"+slugify($("#fName").value.trim()||"item");
+        editing.draft._newImageData=base;
+        editing.draft.image="images/"+slug+".jpg";
+        editing.draft._preview=dataUrl;
+        var pv=$("#fImgPrev"); pv.src=dataUrl; pv.style.visibility="";
+      };
+      rd.readAsDataURL(f);
+    });
+    $("#publish").addEventListener("click",publish);
+    $("#signout").addEventListener("click",function(){ if(confirm("Sign out? You'll need your key again to save.")){ localStorage.removeItem("cakery_gh_token"); location.reload(); } });
+    $("#saveTok").addEventListener("click",function(){
+      var v=$("#tok").value.trim(); if(!v){ toast("Paste your key first",true); return; }
+      token=v; localStorage.setItem("cakery_gh_token",v);
+      // quick validate
+      setStatus("Checking key…");
+      fetch("https://api.github.com/repos/"+OWNER+"/"+REPO,{headers:ghHeaders()}).then(function(r){
+        if(r.ok){ toast("Key saved — you're in!"); boot(); }
+        else { localStorage.removeItem("cakery_gh_token"); token=""; toast("That key didn't work — check the steps",true); setStatus(""); }
+      }).catch(function(){ toast("Network error",true); });
+    });
+
+    /* ---------- boot ---------- */
+    function boot(){
+      if(!window.SITE){ toast("Could not load menu data",true); return; }
+      S=clone(window.SITE);
+      $("#gate").classList.add("hidden"); $("#app").classList.remove("hidden");
+      setStatus(""); render();
+    }
+    if(token){ boot(); } else { $("#gate").classList.remove("hidden"); }
+  })();
+  </script>
+</body>
+</html>
