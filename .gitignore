@@ -1,0 +1,8 @@
+.DS_Store
+.claude/
+node_modules/
+deploy/
+source/
+_cakes_extract/
+*.zip
+Muditas-Cakery-logo-concepts.html
