@@ -863,6 +863,20 @@ window.SITE = {
           "unit": "loaf · 350g",
           "image": "images/breads-ciabatta.jpg",
           "desc": "Rustic, airy Italian loaf with a crackling crust."
+        },
+        {
+          "name": "Burger Buns (White)",
+          "price": 60,
+          "unit": "2 pieces",
+          "desc": "Soft, glossy white burger buns — pillowy and sturdy.",
+          "image": "images/buns-pav-burger-buns-white.jpg"
+        },
+        {
+          "name": "Burger Buns (Atta)",
+          "price": 70,
+          "unit": "2 pieces",
+          "desc": "Wholewheat burger buns for a wholesome bite.",
+          "image": "images/buns-pav-burger-buns-atta.jpg"
         }
       ]
     },
@@ -873,20 +887,6 @@ window.SITE = {
       "blurb": "Soft, fresh and made for burgers, vada-pav and everything in between.",
       "image": "images/buns-pav-burger-buns-white.jpg",
       "items": [
-        {
-          "name": "Burger Buns (White)",
-          "price": 60,
-          "unit": "2 pieces",
-          "image": "images/buns-pav-burger-buns-white.jpg",
-          "desc": "Soft, glossy white burger buns — pillowy and sturdy."
-        },
-        {
-          "name": "Burger Buns (Atta)",
-          "price": 70,
-          "unit": "2 pieces",
-          "image": "images/buns-pav-burger-buns-atta.jpg",
-          "desc": "Wholewheat burger buns for a wholesome bite."
-        },
         {
           "name": "Laadi Pav",
           "price": 60,
