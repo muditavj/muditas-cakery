@@ -877,6 +877,16 @@ window.SITE = {
           "unit": "2 pieces",
           "desc": "Wholewheat burger buns for a wholesome bite.",
           "image": "images/buns-pav-burger-buns-atta.jpg"
+        },
+        {
+          "name": "Laadi Pav",
+          "price": 60,
+          "unit": "6 pieces",
+          "desc": "Classic soft ladi-pav — for vada-pav, pav-bhaji and misal.",
+          "tags": [
+            "bestseller"
+          ],
+          "image": "images/buns-pav-laadi-pav.jpg"
         }
       ]
     },
@@ -886,18 +896,7 @@ window.SITE = {
       "kicker": "The Bakery Counter",
       "blurb": "Soft, fresh and made for burgers, vada-pav and everything in between.",
       "image": "images/buns-pav-burger-buns-white.jpg",
-      "items": [
-        {
-          "name": "Laadi Pav",
-          "price": 60,
-          "unit": "6 pieces",
-          "image": "images/buns-pav-laadi-pav.jpg",
-          "desc": "Classic soft ladi-pav — for vada-pav, pav-bhaji and misal.",
-          "tags": [
-            "bestseller"
-          ]
-        }
-      ]
+      "items": []
     }
   ]
 };
