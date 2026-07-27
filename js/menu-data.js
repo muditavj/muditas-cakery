@@ -1,6 +1,4 @@
-/* ============================================================================
-   MUDITA'S CAKERY — menu data (managed by the Admin editor)
-   ============================================================================ */
+/* MUDITA'S CAKERY — menu data (managed by the Admin editor) */
 window.SITE = {
   "brand": {
     "name": "Mudita's Cakery",
@@ -895,14 +893,6 @@ window.SITE = {
           "image": "images/buns-pav-laadi-pav.jpg"
         }
       ]
-    },
-    {
-      "id": "buns-pav",
-      "name": "Buns & Pav",
-      "kicker": "The Bakery Counter",
-      "blurb": "Soft, fresh and made for burgers, vada-pav and everything in between.",
-      "image": "images/buns-pav-burger-buns-white.jpg",
-      "items": []
     }
   ]
 };
