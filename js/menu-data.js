@@ -747,23 +747,9 @@ window.SITE = {
           "unit": "each",
           "image": "images/specials-cupcakes.jpg",
           "desc": "Swirled, sprinkled and frosted by hand."
-        }
-      ]
-    },
-    {
-      "id": "mava",
-      "name": "Mava Pizza",
-      "kicker": "A House Curiosity",
-      "blurb": "Our sweet mava 'pizza' — a rich, shareable indulgence you won't find just anywhere.",
-      "image": "images/mava-mava-pizza.jpg",
-      "items": [
+        },
         {
           "name": "Mava Pizza",
-          "image": "images/mava-mava-pizza.jpg",
-          "desc": "A decadent sweet 'pizza' base loaded with rich mava — sliced and shared.",
-          "tags": [
-            "signature"
-          ],
           "price": [
             {
               "label": "6\"",
@@ -773,9 +759,22 @@ window.SITE = {
               "label": "8\"",
               "value": 500
             }
-          ]
+          ],
+          "desc": "A decadent sweet 'pizza' base loaded with rich mava — sliced and shared.",
+          "tags": [
+            "signature"
+          ],
+          "image": "images/mava-mava-pizza.jpg"
         }
       ]
+    },
+    {
+      "id": "mava",
+      "name": "Mava Pizza",
+      "kicker": "A House Curiosity",
+      "blurb": "Our sweet mava 'pizza' — a rich, shareable indulgence you won't find just anywhere.",
+      "image": "images/mava-mava-pizza.jpg",
+      "items": []
     },
     {
       "id": "breads",
