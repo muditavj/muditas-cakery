@@ -1,7 +1,5 @@
 /* ============================================================================
-   MUDITA'S CAKERY — menu data
-   This file is managed by the built-in Admin editor. You can still edit by hand,
-   but the Admin panel is the easy way. Prices in INR (₹).
+   MUDITA'S CAKERY — menu data (managed by the Admin editor)
    ============================================================================ */
 window.SITE = {
   "brand": {
@@ -897,6 +895,16 @@ window.SITE = {
           "desc": "Classic soft ladi-pav — for vada-pav, pav-bhaji and misal.",
           "tags": [
             "bestseller"
+          ]
+        },
+        {
+          "name": "Test Bun",
+          "price": 300,
+          "unit": "500 g",
+          "desc": "Test DEscriptoin Test DEscriptoin Test DEscriptoin Test DEscriptoinTest DEscriptoin Test DEscriptoin Test DEscriptoin Test DEscriptoin Test DEscriptoinTest DEscriptoin",
+          "tags": [
+            "bestseller",
+            "sugarfree"
           ]
         }
       ]
