@@ -896,16 +896,6 @@ window.SITE = {
           "tags": [
             "bestseller"
           ]
-        },
-        {
-          "name": "Test Bun",
-          "price": 300,
-          "unit": "500 g",
-          "desc": "Test DEscriptoin Test DEscriptoin Test DEscriptoin Test DEscriptoinTest DEscriptoin Test DEscriptoin Test DEscriptoin Test DEscriptoin Test DEscriptoinTest DEscriptoin",
-          "tags": [
-            "bestseller",
-            "sugarfree"
-          ]
         }
       ]
     }
