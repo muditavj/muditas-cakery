@@ -7,6 +7,7 @@
 
   const SITE = window.SITE;
   const CUR = SITE.currency;
+  const UI = (k, d) => (SITE.ui && SITE.ui[k]) || d;
   const canHover = window.matchMedia("(hover:hover) and (pointer:fine)").matches;
   const reduceMotion = window.matchMedia("(prefers-reduced-motion:reduce)").matches;
   const $ = (s, c = document) => c.querySelector(s);
@@ -145,13 +146,13 @@
     app.innerHTML = `
       <section class="view home">
         <div class="hero">
-          <span class="pill stagger">Freshly Baked · Home Bakery</span>
+          <span class="pill stagger">${esc(UI("heroPill", "Freshly Baked · Home Bakery"))}</span>
           <h1 class="stagger brand-name">${brandTitle}</h1>
           <p class="brand-mark stagger">${esc(SITE.brand.tagline)}</p>
-          <span class="egg-badge stagger">100% Eggless bakery</span>
+          <span class="egg-badge stagger">${esc(UI("egglessBadge", "100% Eggless bakery"))}</span>
           <a class="searchbar stagger" href="#search" data-link>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><line x1="16" y1="16" x2="20.5" y2="20.5"/></svg>
-            Search cakes, cookies, breads…
+            ${esc(UI("searchPlaceholder", "Search cakes, cookies, breads…"))}
           </a>
         </div>
         <div class="section-label">
@@ -383,7 +384,7 @@
     app.innerHTML = `
       <section class="view search">
         <div class="search__head">
-          <label class="search__field"><span>🔍</span><input id="q" type="search" placeholder="Search cakes, cookies, breads…" autocomplete="off" /></label>
+          <label class="search__field"><span>🔍</span><input id="q" type="search" placeholder="${esc(UI("searchPlaceholder", "Search cakes, cookies, breads…"))}" autocomplete="off" /></label>
           <a class="search__x" href="#" data-link aria-label="Close search">✕</a>
         </div>
         <div id="results"><p class="search__hint">Start typing to find your treat 🍪</p></div>
@@ -427,9 +428,9 @@
         <div class="delivery stagger"><h3>Pickup &amp; delivery</h3><ul>${h.delivery.map((d) => `<li>${esc(d)}</li>`).join("")}</ul></div>
         <a class="btn btn--wa magnetic stagger" style="margin-top:1.4rem" href="${waGeneral}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.15-1.7-.83-2-.93-.26-.1-.45-.15-.64.15-.19.28-.73.92-.9 1.1-.16.19-.33.21-.62.07-1.6-.8-2.64-1.43-3.7-3.23-.28-.48.28-.45.8-1.48.09-.18.04-.34-.02-.48-.07-.15-.64-1.55-.88-2.12-.23-.55-.47-.48-.64-.49h-.55c-.19 0-.5.07-.76.35-.26.28-1 .98-1 2.4s1.02 2.78 1.17 2.97c.14.19 2.02 3.08 4.9 4.32.68.3 1.22.47 1.63.6.69.22 1.31.19 1.8.12.55-.08 1.7-.7 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.34zM12 2A10 10 0 0 0 2 12c0 1.77.46 3.45 1.28 4.95L2 22l5.2-1.36A10 10 0 1 0 12 2z"/></svg> Order on WhatsApp</a>`;
     } else if (page === "gallery") {
-      body = `<h1>Our <em>Gallery</em></h1><div class="gallery">${SITE.gallery.map((src) => `<figure class="stagger distort" data-cursor><img src="${src}" alt="Mudita's Cakery bake" loading="lazy" crossorigin="anonymous" /></figure>`).join("")}</div>`;
+      body = `<h1>${esc(UI("galleryTitle", "Our Gallery"))}</h1><div class="gallery">${SITE.gallery.map((src) => `<figure class="stagger distort" data-cursor><img src="${src}" alt="Mudita's Cakery bake" loading="lazy" crossorigin="anonymous" /></figure>`).join("")}</div>`;
     } else { // faq
-      body = `<h1>Frequently <em>Asked</em></h1><div class="faq">${SITE.faq.map((f) => `<div class="faq__item stagger"><button class="faq__q">${esc(f.q)}<i></i></button><div class="faq__a"><p>${esc(f.a)}</p></div></div>`).join("")}</div>`;
+      body = `<h1>${esc(UI("faqTitle", "Frequently Asked"))}</h1><div class="faq">${SITE.faq.map((f) => `<div class="faq__item stagger"><button class="faq__q">${esc(f.q)}<i></i></button><div class="faq__a"><p>${esc(f.a)}</p></div></div>`).join("")}</div>`;
     }
     app.innerHTML = `<section class="view info"><div class="viewbar"><a class="back" href="#" data-link>← Menu</a></div>${body}</section>`;
 

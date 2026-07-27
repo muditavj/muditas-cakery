@@ -22,6 +22,13 @@ window.SITE = {
     "Seasonal flavours available only while in season."
   ],
   "currency": "₹",
+  "ui": {
+    "heroPill": "Freshly Baked · Home Bakery",
+    "egglessBadge": "100% Eggless bakery",
+    "searchPlaceholder": "Search cakes, cookies, breads…",
+    "galleryTitle": "Our Gallery",
+    "faqTitle": "Frequently Asked"
+  },
   "story": {
     "kicker": "Our Story",
     "title": "Baked by hand,<br>in small batches.",
