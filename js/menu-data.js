@@ -40,7 +40,7 @@ window.SITE = {
         "l": "Eggless, always"
       },
       {
-        "n": "80+",
+        "n": "200+",
         "l": "Cakes & bakes"
       },
       {
