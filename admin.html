@@ -47,7 +47,8 @@
   .item{ display:flex; gap:.7rem; align-items:center; background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:.55rem; }
   .item img{ width:52px; height:52px; border-radius:10px; object-fit:cover; flex:none; background:#eee; }
   .item__b{ flex:1; min-width:0; } .item__n{ font-weight:600; } .item__p{ font-size:.8rem; color:var(--berry); font-weight:600; }
-  .item__x{ display:flex; gap:.35rem; }
+  .item__x{ display:flex; gap:.35rem; flex-wrap:wrap; justify-content:flex-end; }
+  .mvgroup{ display:flex; gap:.35rem; flex-wrap:wrap; align-items:center; }
   .catblock{ margin-bottom:1.6rem; } .catblock h3{ margin:0 0 .5rem; font-size:1.05rem; }
   /* thumbs */
   .thumbs{ display:grid; grid-template-columns:repeat(auto-fill,minmax(90px,1fr)); gap:.5rem; }
@@ -149,6 +150,7 @@
 
     function slugify(s){ return String(s||"").toLowerCase().replace(/["'’]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/(^-|-$)/g,""); }
     function clone(o){ return JSON.parse(JSON.stringify(o)); }
+    function move(arr,from,to){ if(to<0||to>=arr.length) return; arr.splice(to,0,arr.splice(from,1)[0]); }
     function esc(s){ return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
     function escA(s){ return esc(s).replace(/"/g,"&quot;"); }
     function toast(m,err){ var t=$("#toast"); t.textContent=m; t.className="toast show"+(err?" err":""); setTimeout(function(){t.className="toast";},err?4600:2600); }
@@ -188,7 +190,7 @@
         var items=cat.items.map(function(it,ii){
           return '<div class="item"><img src="'+escA(imgURL(it.image))+'" alt="" onerror="this.style.visibility=\'hidden\'"/>'+
             '<div class="item__b"><div class="item__n">'+esc(it.name)+'</div><div class="item__p">'+esc(priceLabel(it))+'</div></div>'+
-            '<div class="item__x"><button class="icon-btn" data-edit="'+ci+'.'+ii+'">Edit</button><button class="icon-btn del" data-del="'+ci+'.'+ii+'">Delete</button></div></div>';
+            '<div class="item__x"><button class="icon-btn" data-mvitem="'+ci+'.'+ii+'.up" title="Move up">▲</button><button class="icon-btn" data-mvitem="'+ci+'.'+ii+'.down" title="Move down">▼</button><button class="icon-btn" data-mvitem="'+ci+'.'+ii+'.top" title="Send to top">⤒</button><button class="icon-btn" data-edit="'+ci+'.'+ii+'">Edit</button><button class="icon-btn del" data-del="'+ci+'.'+ii+'">Delete</button></div></div>';
         }).join("");
         return '<div class="catblock"><h3>'+esc(cat.name)+' <span style="color:var(--muted);font-weight:400">('+cat.items.length+')</span></h3><div class="items">'+items+'</div><button class="btn addbtn" data-add-item="'+ci+'">+ Add item to '+esc(cat.name)+'</button></div>';
       }).join("");
@@ -197,7 +199,7 @@
     /* ---------- CATEGORIES ---------- */
     function viewCategories(){
       return '<h2 class="sec">Categories</h2>'+S.categories.map(function(cat,i){
-        return '<div class="card"><div class="card__top"><b>'+esc(cat.name||"Untitled")+'</b><button class="icon-btn del" data-remove="categories.'+i+'" data-confirm="Delete this whole category and its items?">Delete category</button></div>'+
+        return '<div class="card"><div class="card__top"><b>'+esc(cat.name||"Untitled")+'</b><span class="mvgroup"><button class="icon-btn" data-mvcat="'+i+'.up" title="Move up">▲</button><button class="icon-btn" data-mvcat="'+i+'.down" title="Move down">▼</button><button class="icon-btn" data-mvcat="'+i+'.top" title="Send to top">⤒</button><button class="icon-btn del" data-remove="categories.'+i+'" data-confirm="Delete this whole category and its items?">Delete</button></span></div>'+
           '<label>Name</label>'+txt("categories."+i+".name")+
           '<label>Small label (kicker)</label>'+txt("categories."+i+".kicker","e.g. The Cake Collection")+
           '<label>Blurb</label>'+area("categories."+i+".blurb","One line describing this category")+
@@ -333,6 +335,8 @@
     document.addEventListener("click",function(e){
       var t=e.target;
       if(t.dataset.tab){ active=t.dataset.tab; renderTabs(); renderPanel(); window.scrollTo(0,0); return; }
+      if(t.dataset.mvitem){ var mi=t.dataset.mvitem.split("."), mci=+mi[0], mii=+mi[1], mdir=mi[2], marr=S.categories[mci].items; if(mdir==="top"){ if(mii>0) marr.unshift(marr.splice(mii,1)[0]); } else move(marr,mii,mdir==="up"?mii-1:mii+1); renderPanel(); markDirty(); return; }
+      if(t.dataset.mvcat){ var mc=t.dataset.mvcat.split("."), mcx=+mc[0], mcd=mc[1]; if(mcd==="top"){ if(mcx>0) S.categories.unshift(S.categories.splice(mcx,1)[0]); } else move(S.categories,mcx,mcd==="up"?mcx-1:mcx+1); renderPanel(); markDirty(); return; }
       if(t.dataset.edit){ var a=t.dataset.edit.split("."); openEditor(+a[0],+a[1]); return; }
       if(t.dataset.del){ var b=t.dataset.del.split("."); if(confirm("Delete this item?")){ S.categories[+b[0]].items.splice(+b[1],1); renderPanel(); markDirty(); } return; }
       if(t.dataset.addItem!=null && t.dataset.addItem!==""){ openEditor(+t.dataset.addItem,null); return; }
