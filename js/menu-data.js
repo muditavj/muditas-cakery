@@ -129,6 +129,13 @@ window.SITE = {
       "image": "images/signature-cakes-vanilla.jpg",
       "items": [
         {
+          "name": "Vanilla",
+          "price": 450,
+          "unit": "per 500g",
+          "desc": "The timeless one. Fragrant Madagascar-style vanilla sponge, cloud-soft and delicately sweet.",
+          "image": "images/signature-cakes-vanilla.jpg"
+        },
+        {
           "name": "Pineapple",
           "price": 500,
           "unit": "per 500g",
@@ -147,13 +154,6 @@ window.SITE = {
             "bestseller"
           ],
           "image": "images/signature-cakes-butterscotch.jpg"
-        },
-        {
-          "name": "Vanilla",
-          "price": 450,
-          "unit": "per 500g",
-          "desc": "The timeless one. Fragrant Madagascar-style vanilla sponge, cloud-soft and delicately sweet.",
-          "image": "images/signature-cakes-vanilla.jpg"
         },
         {
           "name": "Strawberry",
@@ -917,6 +917,16 @@ window.SITE = {
       "image": "images/breads-sandwich-bread.jpg",
       "items": [
         {
+          "name": "Laadi Pav",
+          "price": 60,
+          "unit": "6 pieces",
+          "desc": "Classic soft ladi-pav — for vada-pav, pav-bhaji and misal.",
+          "tags": [
+            "bestseller"
+          ],
+          "image": "images/buns-pav-laadi-pav.jpg"
+        },
+        {
           "name": "Sandwich/white Bread",
           "price": [
             {
@@ -978,16 +988,6 @@ window.SITE = {
           ],
           "desc": "Semolina loaf with a lovely golden crust and tender bite.",
           "image": "images/breads-suji-bread.jpg"
-        },
-        {
-          "name": "Laadi Pav",
-          "price": 60,
-          "unit": "6 pieces",
-          "desc": "Classic soft ladi-pav — for vada-pav, pav-bhaji and misal.",
-          "tags": [
-            "bestseller"
-          ],
-          "image": "images/buns-pav-laadi-pav.jpg"
         },
         {
           "name": "Focaccia",
