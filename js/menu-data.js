@@ -129,13 +129,6 @@ window.SITE = {
       "image": "images/signature-cakes-vanilla.jpg",
       "items": [
         {
-          "name": "Vanilla",
-          "price": 450,
-          "unit": "per 500g",
-          "desc": "The timeless one. Fragrant Madagascar-style vanilla sponge, cloud-soft and delicately sweet.",
-          "image": "images/signature-cakes-vanilla.jpg"
-        },
-        {
           "name": "Pineapple",
           "price": 500,
           "unit": "per 500g",
@@ -154,6 +147,13 @@ window.SITE = {
             "bestseller"
           ],
           "image": "images/signature-cakes-butterscotch.jpg"
+        },
+        {
+          "name": "Vanilla",
+          "price": 450,
+          "unit": "per 500g",
+          "desc": "The timeless one. Fragrant Madagascar-style vanilla sponge, cloud-soft and delicately sweet.",
+          "image": "images/signature-cakes-vanilla.jpg"
         },
         {
           "name": "Strawberry",
@@ -980,6 +980,16 @@ window.SITE = {
           "image": "images/breads-suji-bread.jpg"
         },
         {
+          "name": "Laadi Pav",
+          "price": 60,
+          "unit": "6 pieces",
+          "desc": "Classic soft ladi-pav — for vada-pav, pav-bhaji and misal.",
+          "tags": [
+            "bestseller"
+          ],
+          "image": "images/buns-pav-laadi-pav.jpg"
+        },
+        {
           "name": "Focaccia",
           "price": 180,
           "unit": "loaf · 400g",
@@ -1009,16 +1019,6 @@ window.SITE = {
           "unit": "2 pieces",
           "desc": "Wholewheat burger buns for a wholesome bite.",
           "image": "images/buns-pav-burger-buns-atta.jpg"
-        },
-        {
-          "name": "Laadi Pav",
-          "price": 60,
-          "unit": "6 pieces",
-          "desc": "Classic soft ladi-pav — for vada-pav, pav-bhaji and misal.",
-          "tags": [
-            "bestseller"
-          ],
-          "image": "images/buns-pav-laadi-pav.jpg"
         }
       ],
       "note": "order 2 days prior "
