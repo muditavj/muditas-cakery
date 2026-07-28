@@ -24,7 +24,7 @@ window.SITE = {
     "heroPill": "Freshly Baked · Home Bakery",
     "egglessBadge": "100% Eggless, fassai certified ",
     "searchPlaceholder": "Search cakes, cookies, breads…",
-    "galleryTitle": "Our Gallery",
+    "galleryTitle": "Some pictures of our achievements and customised cakes we made people ",
     "faqTitle": "Frequently Asked"
   },
   "story": {
@@ -48,7 +48,7 @@ window.SITE = {
         "l": "Days prior order notice "
       }
     ],
-    "image": "images/about-1785237429107.jpg"
+    "image": "images/about-1785247257021.jpg"
   },
   "howToOrder": {
     "kicker": "How to Order",
@@ -73,7 +73,7 @@ window.SITE = {
     ],
     "delivery": [
       "Please order at least 1–2 days in advance. Cheesecakes need at least 3 days' notice.",
-      "Pickup from 191, Sabzibazar, Nayapura.",
+      "Pickup from 191, Sabzibazar, Nayapura. Behind chaman hotel",
       "Local delivery available on request — share your area when you order.",
       "Every cake & bake is 100% eggless. Sugar-free options available on most items — just ask."
     ]
@@ -96,8 +96,8 @@ window.SITE = {
       "a": "Absolutely. Tell us the occasion and what you have in mind — we'll tailor the cake to you. Custom sizes beyond the menu are available on request."
     },
     {
-      "q": "Do you deliver?",
-      "a": "Pickup is from our kitchen in Nayapura. Local delivery is available on request — please share your area when ordering so we can confirm."
+      "q": "Do you deliver? And is their any delivery fee",
+      "a": "Pickup is from our kitchen in Nayapura. Local delivery is available on request — please share your area when ordering so we can confirm. And yes we take delivery fee"
     },
     {
       "q": "How are prices calculated?",
