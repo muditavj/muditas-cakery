@@ -40,15 +40,15 @@ window.SITE = {
         "l": "Eggless, always"
       },
       {
-        "n": "200+",
-        "l": "Cakes & bakes"
+        "n": "500+",
+        "l": "Loyal customers "
       },
       {
         "n": "1–3",
         "l": "Days' notice"
       }
     ],
-    "image": "images/signature-cakes-black-forest.jpg"
+    "image": "images/about-1785230630227.jpg"
   },
   "howToOrder": {
     "kicker": "How to Order",
