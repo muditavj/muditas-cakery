@@ -40,15 +40,15 @@ window.SITE = {
         "l": "Eggless, always"
       },
       {
-        "n": "200+",
-        "l": "Cakes & bakes"
+        "n": "500+",
+        "l": "loyal customers "
       },
       {
         "n": "1–3",
         "l": "Days' notice"
       }
     ],
-    "image": "images/signature-cakes-black-forest.jpg"
+    "image": "images/about-1785225137841.jpg"
   },
   "howToOrder": {
     "kicker": "How to Order",
@@ -60,22 +60,23 @@ window.SITE = {
       },
       {
         "t": "Message us",
-        "d": "Send your choice, size and date on WhatsApp — or give us a call."
+        "d": "Send your choice of flavor, size of cake you want, design of a cake you want us to customize for you and date of your occasion. WhatsApp — or give us a call. "
       },
       {
-        "t": "Confirm the details",
+        "t": "once the details are confirmed ",
         "d": "We'll confirm price, timing and any customisation, then take your order."
       },
       {
         "t": "Fresh-baked & ready",
-        "d": "Collect from our kitchen, or ask about local delivery on your day."
+        "d": "Collect from our kitchen, or ask about local delivery on your day. delivery depends on your location"
       }
     ],
     "delivery": [
       "Please order at least 1–2 days in advance. Cheesecakes need at least 3 days' notice.",
-      "Pickup from 191, Sabzibazar, Nayapura.",
+      "Pickup from 191, Sabzibazar, Nayapura. behind chaman hotel",
       "Local delivery available on request — share your area when you order.",
-      "Every cake & bake is 100% eggless. Sugar-free options available on most items — just ask."
+      "Every cake & bake is 100% eggless. Sugar-free options available on most items — just ask.",
+      "please do not ask for pay on delivery or after delivery we only accept pre paid orders that's our policy and delivery charges are excluded "
     ]
   },
   "faq": [
