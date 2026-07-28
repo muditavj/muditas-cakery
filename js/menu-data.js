@@ -31,7 +31,7 @@ window.SITE = {
     "kicker": "Our Story",
     "title": "Baked by hand,<br>in small batches.",
     "body": [
-      "Mudita's Cakery began at home in Nayapura, with a simple belief — that a cake made with real butter, real cream and a little patience always tastes better. And that you should never have to choose between pure-veg and delicious, so every single cake we make is 100% eggless.",
+      "Mudita's Cakery began at home, with a simple belief — that a cake made with real butter, real cream and a little patience always tastes better. And that you should never have to choose between pure-veg and delicious, so every single cake we make is 100% eggless.",
       "Every order is baked fresh, just for you. Nothing sits on a shelf; nothing is mass-made. From celebration centrepieces to warm morning breads, each bake leaves our kitchen the way we'd serve it to our own family."
     ],
     "stats": [
@@ -324,7 +324,7 @@ window.SITE = {
     },
     {
       "id": "dry-cakes",
-      "name": "Dry Cakes & Tea Cakes",
+      "name": "Dry & Tea Cakes",
       "kicker": "freshly baked on order ",
       "blurb": "Buttery loaf-style cakes made for chai-time — no frosting, all comfort.",
       "unit": "per 250g",
@@ -448,7 +448,7 @@ window.SITE = {
     },
     {
       "id": "cheesecakes",
-      "name": "Cheesecakes",
+      "name": "cheesy Cheesecakes",
       "kicker": "Mouth Melting  Premium Cheesecake ",
       "blurb": "Slow-set, ultra-creamy cheesecakes — our most-requested indulgence.",
       "unit": "per 500g",
@@ -456,7 +456,7 @@ window.SITE = {
       "image": "images/cheesecakes-new-york.jpg",
       "items": [
         {
-          "name": "New York",
+          "name": "New York cheesecake",
           "price": 1000,
           "unit": "per 500g",
           "desc": "The benchmark — dense, tangy and impossibly smooth on a buttery base.",
@@ -467,7 +467,7 @@ window.SITE = {
           "image": "images/cheesecakes-new-york.jpg"
         },
         {
-          "name": "Fig & Mawa",
+          "name": "Fig & Mawa cheesecake",
           "price": 1200,
           "unit": "per 500g",
           "desc": "Rich mawa cheesecake with jammy fig — luxurious and Indian at heart.",
@@ -478,14 +478,14 @@ window.SITE = {
           "image": "images/cheesecakes-fig-mawa.jpg"
         },
         {
-          "name": "Rasmalai",
+          "name": "Rasmalai cheesecake",
           "price": 1200,
           "unit": "per 500g",
           "desc": "Saffron-cardamom cheesecake with a rasmalai soul.",
           "image": "images/cheesecakes-rasmalai.jpg"
         },
         {
-          "name": "Lotus Biscoff",
+          "name": "Lotus Biscoff cheesecake",
           "price": 1200,
           "unit": "per 500g",
           "desc": "Caramel-spiced Biscoff swirl over a cookie crumb base.",
@@ -495,7 +495,7 @@ window.SITE = {
           "image": "images/cheesecakes-lotus-biscoff.jpg"
         },
         {
-          "name": "Caramel Popcorn",
+          "name": "Caramel Popcorn cheesecake",
           "price": 1200,
           "unit": "per 500g",
           "desc": "Salted caramel cheesecake crowned with buttery popcorn.",
@@ -505,7 +505,7 @@ window.SITE = {
           "image": "images/cheesecakes-caramel-popcorn.jpg"
         },
         {
-          "name": "Blueberry",
+          "name": "Blueberry cheesecake",
           "price": 1200,
           "unit": "per 500g",
           "desc": "Tangy blueberry compote rippled through silky cheese.",
@@ -515,42 +515,45 @@ window.SITE = {
           "image": "images/cheesecakes-blueberry.jpg"
         },
         {
-          "name": "Strawberry",
+          "name": "Strawberry cheesecake",
           "price": 1000,
           "unit": "per 500g",
           "desc": "Fresh strawberry glaze over classic creamy cheesecake.",
           "image": "images/cheesecakes-strawberry.jpg"
         },
         {
-          "name": "Chocolate",
+          "name": "Chocolate cheesecake",
           "price": 1200,
           "unit": "per 500g",
           "desc": "Dark-chocolate cheesecake — dense, glossy, decadent.",
           "image": "images/cheesecakes-chocolate.jpg"
         },
         {
-          "name": "Espresso",
+          "name": "Espresso cheesecake",
           "price": 1200,
           "unit": "per 500g",
           "desc": "A deep coffee hit set into velvety cheesecake.",
+          "tags": [
+            "new"
+          ],
           "image": "images/cheesecakes-espresso.jpg"
         },
         {
-          "name": "Oreo",
+          "name": "Oreo cheesecake",
           "price": 1000,
           "unit": "per 500g",
           "desc": "Cookies-and-cream cheesecake for the young at heart.",
           "image": "images/cheesecakes-oreo.jpg"
         },
         {
-          "name": "Gulab Jamun",
+          "name": "Gulab Jamun cheesecake",
           "price": 1200,
           "unit": "per 500g",
           "desc": "Syrup-soaked gulab jamun folded into creamy cheese.",
           "image": "images/cheesecakes-gulab-jamun.jpg"
         },
         {
-          "name": "Kunafa",
+          "name": "Kunafa cheesecake",
           "price": 1400,
           "unit": "per 500g",
           "desc": "Crisp golden kunafa over rich cheesecake — a Middle-Eastern showstopper.",
@@ -560,7 +563,7 @@ window.SITE = {
           "image": "images/cheesecakes-kunafa.jpg"
         },
         {
-          "name": "Mango",
+          "name": "Mango cheesecake",
           "price": 1200,
           "unit": "per 500g",
           "desc": "Sunny Alphonso mango cheesecake — pure summer.",
@@ -570,14 +573,14 @@ window.SITE = {
           "image": "images/cheesecakes-mango.jpg"
         },
         {
-          "name": "Mint",
+          "name": "Mint cheesecake",
           "price": 1000,
           "unit": "per 500g",
           "desc": "Cool, fresh mint set into a smooth, light cheesecake.",
           "image": "images/cheesecakes-mint.jpg"
         },
         {
-          "name": "Burnt Basque",
+          "name": "Burnt cheesecake",
           "price": 1500,
           "unit": "per 500g",
           "desc": "The caramelised, custardy Basque cheesecake — deeply toasted top, molten centre.",
@@ -591,7 +594,7 @@ window.SITE = {
     },
     {
       "id": "cookies",
-      "name": "Cookies",
+      "name": "Crispy Cookies",
       "kicker": "The Cookie box",
       "blurb": "Baked in small batches — buttery, crumbly and dangerously moreish.",
       "unit": "per 250g",
@@ -640,14 +643,14 @@ window.SITE = {
           "image": "images/cookies-watermelon.jpg"
         },
         {
-          "name": "Namkeen cookies (Jeera, Ajwain, Mixed herbs, Chilly flakes, peri peri)",
+          "name": "savory cookies (Jeera, Ajwain, Mixed herbs, Chilly flakes, peri peri)",
           "price": 200,
           "unit": "per 250g",
           "desc": "Savoury-spiced tea-time cookies for the not-so-sweet.",
           "tags": [
             "bestseller"
           ],
-          "image": "images/cookies-namkeen.jpg"
+          "image": "images/cookies-savory-cookies-jeera-ajwain-mixed-herbs-chilly-flakes-peri-peri.jpg"
         },
         {
           "name": "Red Velvet",
