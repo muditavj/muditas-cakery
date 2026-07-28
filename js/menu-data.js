@@ -121,8 +121,8 @@ window.SITE = {
   "categories": [
     {
       "id": "signature-cakes",
-      "name": "Cakes by Flavour",
-      "kicker": "The Cake Collection",
+      "name": "cakes by Flavour ",
+      "kicker": "all flavours available with your personal customization ",
       "blurb": "Soft, moist sponge layered and iced by hand. Choose your flavour — we bake it fresh for your day.",
       "unit": "per 500g",
       "note": "Priced per 500g · Please order 1–2 days prior",
@@ -130,437 +130,469 @@ window.SITE = {
       "items": [
         {
           "name": "Vanilla",
-          "collection": "Classic Fruit",
           "price": 450,
-          "image": "images/signature-cakes-vanilla.jpg",
-          "desc": "The timeless one. Fragrant Madagascar-style vanilla sponge, cloud-soft and delicately sweet."
+          "unit": "per 500g",
+          "desc": "The timeless one. Fragrant Madagascar-style vanilla sponge, cloud-soft and delicately sweet.",
+          "image": "images/signature-cakes-vanilla.jpg"
         },
         {
           "name": "Pineapple",
-          "collection": "Classic Fruit",
           "price": 500,
-          "image": "images/signature-cakes-pineapple.jpg",
-          "desc": "Light vanilla sponge with juicy pineapple and fresh cream — an evergreen crowd-pleaser."
+          "unit": "per 500g",
+          "desc": "Light vanilla sponge with juicy pineapple and fresh cream — an evergreen crowd-pleaser.",
+          "tags": [
+            "bestseller"
+          ],
+          "image": "images/signature-cakes-pineapple.jpg"
         },
         {
           "name": "Butterscotch",
-          "collection": "Classic Fruit",
           "price": 500,
-          "image": "images/signature-cakes-butterscotch.jpg",
-          "desc": "Golden butterscotch cream with a praline crunch running through every layer."
+          "unit": "per 500g",
+          "desc": "Golden butterscotch cream with a praline crunch running through every layer.",
+          "tags": [
+            "bestseller"
+          ],
+          "image": "images/signature-cakes-butterscotch.jpg"
         },
         {
           "name": "Strawberry",
-          "collection": "Classic Fruit",
           "price": 500,
-          "image": "images/signature-cakes-strawberry.jpg",
-          "desc": "Berry-kissed cream and ripe strawberry folded into pillowy sponge."
+          "unit": "per 500g",
+          "desc": "Berry-kissed cream and ripe strawberry folded into pillowy sponge.",
+          "image": "images/signature-cakes-strawberry.jpg"
         },
         {
           "name": "Mixed Fruits",
-          "collection": "Classic Fruit",
           "price": 650,
-          "image": "images/signature-cakes-mixed-fruits.jpg",
-          "desc": "A generous medley of seasonal fruit and cream — fresh, bright, and celebratory."
+          "unit": "per 500g",
+          "desc": "A generous medley of seasonal fruit and cream — fresh, bright, and celebratory.",
+          "image": "images/signature-cakes-mixed-fruits.jpg"
         },
         {
           "name": "Black Forest",
-          "collection": "Classic Fruit",
           "price": 550,
-          "image": "images/signature-cakes-black-forest.jpg",
+          "unit": "per 500g",
           "desc": "Chocolate sponge, dark cherries and whipped cream — the classic done properly.",
           "tags": [
             "bestseller"
-          ]
+          ],
+          "image": "images/signature-cakes-black-forest.jpg"
         },
         {
           "name": "White Forest",
-          "collection": "Classic Fruit",
           "price": 550,
-          "image": "images/signature-cakes-white-forest.jpg",
-          "desc": "The elegant cousin — white chocolate, cream and cherry in soft vanilla sponge."
+          "unit": "per 500g",
+          "desc": "The elegant cousin — white chocolate, cream and cherry in soft vanilla sponge.",
+          "image": "images/signature-cakes-white-forest.jpg"
         },
         {
           "name": "Blueberry",
-          "collection": "Classic Fruit",
           "price": 700,
-          "image": "images/signature-cakes-blueberry.jpg",
-          "desc": "Vanilla sponge swept with tangy blueberry compote and smooth cream."
+          "unit": "per 500g",
+          "desc": "Vanilla sponge swept with tangy blueberry compote and smooth cream.",
+          "image": "images/signature-cakes-blueberry.jpg"
         },
         {
           "name": "Chocolate",
-          "collection": "Exotic",
           "price": 700,
-          "image": "images/signature-cakes-chocolate.jpg",
+          "unit": "per 500g",
           "desc": "Deep, fudgy and unapologetically rich — for the serious chocolate lover.",
           "tags": [
-            "bestseller"
-          ]
+            "bestseller",
+            "signature"
+          ],
+          "image": "images/signature-cakes-chocolate.jpg"
         },
         {
           "name": "Cookie & Cream",
-          "collection": "Exotic",
           "price": 650,
-          "image": "images/signature-cakes-cookie-cream.jpg",
-          "desc": "Crushed cream biscuits folded through velvety vanilla — nostalgia in every bite."
+          "unit": "per 500g",
+          "desc": "Crushed cream biscuits folded through velvety vanilla — nostalgia in every bite.",
+          "image": "images/signature-cakes-cookie-cream.jpg"
         },
         {
           "name": "Red Velvet",
-          "collection": "Exotic",
           "price": 650,
-          "image": "images/signature-cakes-red-velvet.jpg",
+          "unit": "per 500g",
           "desc": "Ruby-hued cocoa sponge with tangy cream-cheese frosting.",
           "tags": [
             "signature"
-          ]
+          ],
+          "image": "images/signature-cakes-red-velvet.jpg"
         },
         {
           "name": "Lotus Biscoff",
-          "collection": "Exotic",
           "price": 700,
-          "image": "images/signature-cakes-lotus-biscoff.jpg",
+          "unit": "per 500g",
           "desc": "Caramelised Biscoff spread and crumb, layered into a warm-spiced dream.",
           "tags": [
             "signature"
-          ]
+          ],
+          "image": "images/signature-cakes-lotus-biscoff.jpg"
         },
         {
           "name": "Chocolate Nutella",
-          "collection": "Exotic",
           "price": 700,
-          "image": "images/signature-cakes-chocolate-nutella.jpg",
-          "desc": "Chocolate sponge drenched in hazelnut Nutella cream — decadence, doubled."
+          "unit": "per 500g",
+          "desc": "Chocolate sponge drenched in hazelnut Nutella cream — decadence, doubled.",
+          "image": "images/signature-cakes-chocolate-nutella.jpg"
         },
         {
           "name": "Funfetti Vanilla",
-          "collection": "Exotic",
           "price": 650,
-          "image": "images/signature-cakes-funfetti-vanilla.jpg",
-          "desc": "Confetti-flecked vanilla sponge — a party baked right into the cake."
+          "unit": "per 500g",
+          "desc": "Confetti-flecked vanilla sponge — a party baked right into the cake.",
+          "tags": [
+            "new"
+          ],
+          "image": "images/signature-cakes-funfetti-vanilla.jpg"
         },
         {
           "name": "Dalgona Coffee",
-          "collection": "Exotic",
           "price": 650,
-          "image": "images/signature-cakes-dalgona-coffee.jpg",
-          "desc": "Whipped dalgona coffee cream over soft sponge — a grown-up caffeine hit."
+          "unit": "per 500g",
+          "desc": "Whipped dalgona coffee cream over soft sponge — a grown-up caffeine hit.",
+          "image": "images/signature-cakes-dalgona-coffee.jpg"
         },
         {
           "name": "Rasmalai",
-          "collection": "Indian Touch",
           "price": 700,
-          "image": "images/signature-cakes-rasmalai.jpg",
+          "unit": "per 500g",
           "desc": "Saffron-cardamom cream and rasmalai soak — mithai reimagined as a cake.",
           "tags": [
-            "signature"
-          ]
+            "bestseller"
+          ],
+          "image": "images/signature-cakes-rasmalai.jpg"
         },
         {
           "name": "Paan",
-          "collection": "Indian Touch",
           "price": 550,
-          "image": "images/signature-cakes-paan.jpg",
-          "desc": "Cooling gulkand-and-paan cream — a refreshing after-dinner delight."
+          "unit": "per 500g",
+          "desc": "Cooling gulkand-and-paan cream — a refreshing after-dinner delight.",
+          "image": "images/signature-cakes-paan.jpg"
         },
         {
           "name": "Gulab Jamun",
-          "collection": "Indian Touch",
           "price": 700,
-          "image": "images/signature-cakes-gulab-jamun.jpg",
-          "desc": "Warm-spiced sponge crowned with syrup-soaked gulab jamun."
+          "unit": "per 500g",
+          "desc": "Warm-spiced sponge crowned with syrup-soaked gulab jamun.",
+          "image": "images/signature-cakes-gulab-jamun.jpg"
+        },
+        {
+          "name": "Chocolate Truffle Cake",
+          "price": 1000,
+          "unit": "per 500g",
+          "desc": "Layers of chocolate sponge and silky truffle ganache — celebration-grade.",
+          "tags": [
+            "bestseller",
+            "signature"
+          ],
+          "image": "images/brownies-truffle-chocolate-truffle-cake.jpg"
+        },
+        {
+          "name": "Mango (seasonal)",
+          "price": 600,
+          "unit": "per 500g",
+          "desc": "Fresh mango and cream on soft sponge — only while mangoes are at their best.",
+          "tags": [
+            "seasonal"
+          ],
+          "image": "images/specials-mango-cake.jpg"
+        },
+        {
+          "name": "Mava Malai Cake",
+          "price": 800,
+          "unit": "per 500g",
+          "desc": "Ultra-rich mava-malai cake — dense, creamy and indulgent.",
+          "tags": [
+            "new"
+          ],
+          "image": "images/specials-mava-malai-cake.jpg"
+        },
+        {
+          "name": "Almond Caramel Cake",
+          "price": 700,
+          "unit": "per 500g",
+          "desc": "Toasted almond sponge under a glossy caramel veil.",
+          "tags": [
+            "new"
+          ],
+          "image": "images/specials-almond-caramel-cake.jpg"
         }
       ]
     },
     {
       "id": "dry-cakes",
       "name": "Dry Cakes & Tea Cakes",
-      "kicker": "Everyday Bakes",
+      "kicker": "freshly baked on order ",
       "blurb": "Buttery loaf-style cakes made for chai-time — no frosting, all comfort.",
-      "unit": "per 500g",
-      "note": "Priced per 500g · Sugar-free options available",
+      "unit": "per 250g",
+      "note": "Priced per 250g · Sugar-free options available",
       "image": "images/dry-cakes-vanilla.jpg",
       "items": [
         {
           "name": "Vanilla",
-          "price": 500,
-          "image": "images/dry-cakes-vanilla.jpg",
-          "desc": "A plain, perfect butter tea-cake — soft crumb, gentle vanilla."
+          "price": 200,
+          "unit": "per 250g",
+          "desc": "A plain, perfect butter tea-cake — soft crumb, gentle vanilla.",
+          "image": "images/dry-cakes-vanilla.jpg"
         },
         {
           "name": "Funfetti",
-          "price": 600,
-          "image": "images/dry-cakes-funfetti.jpg",
-          "desc": "Buttery loaf shot through with rainbow sprinkles."
+          "price": 250,
+          "unit": "per 250g",
+          "desc": "Buttery loaf shot through with rainbow sprinkles.",
+          "image": "images/dry-cakes-funfetti.jpg"
         },
         {
           "name": "Butterscotch",
-          "price": 600,
-          "image": "images/dry-cakes-butterscotch.jpg",
-          "desc": "Caramelised butterscotch crumb with a praline crunch."
+          "price": 260,
+          "unit": "per 250g",
+          "desc": "Caramelised butterscotch crumb with a praline crunch.",
+          "image": "images/dry-cakes-butterscotch.jpg"
         },
         {
           "name": "Rasmalai",
-          "price": 700,
-          "image": "images/dry-cakes-rasmalai.jpg",
-          "desc": "Saffron and cardamom baked into a tender tea-cake."
+          "price": 350,
+          "unit": "per 250g",
+          "desc": "Saffron and cardamom baked into a tender tea-cake.",
+          "image": "images/dry-cakes-rasmalai.jpg"
         },
         {
           "name": "Fruit & Nuts",
-          "price": 700,
-          "image": "images/dry-cakes-fruit-nuts.jpg",
-          "desc": "Loaded with candied fruit and toasted nuts — rich and old-world."
+          "price": 400,
+          "unit": "per 250g",
+          "desc": "Loaded with candied fruit and toasted nuts — rich and old-world.",
+          "tags": [
+            "bestseller",
+            "signature"
+          ],
+          "image": "images/dry-cakes-fruit-nuts.jpg"
         },
         {
           "name": "Honey Almond",
-          "price": 700,
-          "image": "images/dry-cakes-honey-almond.jpg",
-          "desc": "Fragrant honey crumb topped with toasted almond flakes."
+          "price": 400,
+          "unit": "per 250g",
+          "desc": "Fragrant honey crumb topped with toasted almond flakes.",
+          "tags": [
+            "new"
+          ],
+          "image": "images/dry-cakes-honey-almond.jpg"
         },
         {
           "name": "Rose & Pistachio",
-          "price": 700,
-          "image": "images/dry-cakes-rose-pistachio.jpg",
+          "price": 400,
+          "unit": "per 250g",
           "desc": "Delicate rose and slivered pistachio — floral and nutty.",
-          "tags": [
-            "signature"
-          ]
+          "image": "images/dry-cakes-rose-pistachio.jpg"
         },
         {
           "name": "Chocolate",
-          "price": 700,
-          "image": "images/dry-cakes-chocolate.jpg",
-          "desc": "Dense, cocoa-dark loaf for pure chocolate comfort."
+          "price": 400,
+          "unit": "per 250g",
+          "desc": "Dense, cocoa-dark loaf for pure chocolate comfort.",
+          "tags": [
+            "bestseller"
+          ],
+          "image": "images/dry-cakes-chocolate.jpg"
         },
         {
           "name": "Choco Chips",
-          "price": 700,
-          "image": "images/dry-cakes-choco-chips.jpg",
-          "desc": "Vanilla crumb studded with melting chocolate chips."
+          "price": 400,
+          "unit": "per 250g",
+          "desc": "Vanilla crumb studded with melting chocolate chips.",
+          "tags": [
+            "bestseller",
+            "signature"
+          ],
+          "image": "images/dry-cakes-choco-chips.jpg"
         },
         {
           "name": "Mawa Cake",
-          "price": 700,
-          "image": "images/dry-cakes-mawa-cake.jpg",
+          "price": 450,
+          "unit": "per 250g",
           "desc": "The Parsi-bakery classic — rich mawa and cardamom.",
           "tags": [
-            "bestseller"
-          ]
+            "bestseller",
+            "signature"
+          ],
+          "image": "images/dry-cakes-mawa-cake.jpg"
         },
         {
           "name": "Mint & Tutti-Frutti",
-          "price": 600,
-          "image": "images/dry-cakes-mint-tutti-frutti.jpg",
-          "desc": "Cool mint crumb dotted with colourful tutti-frutti."
+          "price": 350,
+          "unit": "per 250g",
+          "desc": "Cool mint crumb dotted with colourful tutti-frutti.",
+          "image": "images/dry-cakes-mint-tutti-frutti.jpg"
         },
         {
           "name": "Marble",
-          "price": 600,
-          "image": "images/dry-cakes-marble.jpg",
-          "desc": "Swirls of vanilla and chocolate in one handsome loaf."
+          "price": 400,
+          "unit": "per 250g",
+          "desc": "Swirls of vanilla and chocolate in one handsome loaf.",
+          "tags": [
+            "bestseller",
+            "signature"
+          ],
+          "image": "images/dry-cakes-marble.jpg"
         },
         {
           "name": "Red Velvet",
-          "price": 600,
-          "image": "images/dry-cakes-red-velvet.jpg",
-          "desc": "Cocoa-kissed red velvet in an easy everyday loaf."
+          "price": 400,
+          "unit": "per 250g",
+          "desc": "Cocoa-kissed red velvet in an easy everyday loaf.",
+          "image": "images/dry-cakes-red-velvet.jpg"
         }
       ]
     },
     {
       "id": "cheesecakes",
       "name": "Cheesecakes",
-      "kicker": "The Cheesecake Bar",
+      "kicker": "Mouth Melting  Premium Cheesecake ",
       "blurb": "Slow-set, ultra-creamy cheesecakes — our most-requested indulgence.",
       "unit": "per 500g",
-      "note": "Priced per 500g · Please order at least 3 days prior",
+      "note": "Please order at least 3 days prior",
       "image": "images/cheesecakes-new-york.jpg",
       "items": [
         {
           "name": "New York",
           "price": 1000,
-          "image": "images/cheesecakes-new-york.jpg",
+          "unit": "per 500g",
           "desc": "The benchmark — dense, tangy and impossibly smooth on a buttery base.",
           "tags": [
-            "bestseller"
-          ]
+            "bestseller",
+            "signature"
+          ],
+          "image": "images/cheesecakes-new-york.jpg"
         },
         {
           "name": "Fig & Mawa",
           "price": 1200,
-          "image": "images/cheesecakes-fig-mawa.jpg",
-          "desc": "Rich mawa cheesecake with jammy fig — luxurious and Indian at heart."
+          "unit": "per 500g",
+          "desc": "Rich mawa cheesecake with jammy fig — luxurious and Indian at heart.",
+          "tags": [
+            "bestseller",
+            "signature"
+          ],
+          "image": "images/cheesecakes-fig-mawa.jpg"
         },
         {
           "name": "Rasmalai",
           "price": 1200,
-          "image": "images/cheesecakes-rasmalai.jpg",
+          "unit": "per 500g",
           "desc": "Saffron-cardamom cheesecake with a rasmalai soul.",
-          "tags": [
-            "signature"
-          ]
+          "image": "images/cheesecakes-rasmalai.jpg"
         },
         {
           "name": "Lotus Biscoff",
           "price": 1200,
-          "image": "images/cheesecakes-lotus-biscoff.jpg",
-          "desc": "Caramel-spiced Biscoff swirl over a cookie crumb base."
+          "unit": "per 500g",
+          "desc": "Caramel-spiced Biscoff swirl over a cookie crumb base.",
+          "tags": [
+            "bestseller"
+          ],
+          "image": "images/cheesecakes-lotus-biscoff.jpg"
         },
         {
           "name": "Caramel Popcorn",
           "price": 1200,
-          "image": "images/cheesecakes-caramel-popcorn.jpg",
-          "desc": "Salted caramel cheesecake crowned with buttery popcorn."
+          "unit": "per 500g",
+          "desc": "Salted caramel cheesecake crowned with buttery popcorn.",
+          "tags": [
+            "new"
+          ],
+          "image": "images/cheesecakes-caramel-popcorn.jpg"
         },
         {
           "name": "Blueberry",
           "price": 1200,
-          "image": "images/cheesecakes-blueberry.jpg",
-          "desc": "Tangy blueberry compote rippled through silky cheese."
+          "unit": "per 500g",
+          "desc": "Tangy blueberry compote rippled through silky cheese.",
+          "tags": [
+            "bestseller"
+          ],
+          "image": "images/cheesecakes-blueberry.jpg"
         },
         {
           "name": "Strawberry",
           "price": 1000,
-          "image": "images/cheesecakes-strawberry.jpg",
-          "desc": "Fresh strawberry glaze over classic creamy cheesecake."
+          "unit": "per 500g",
+          "desc": "Fresh strawberry glaze over classic creamy cheesecake.",
+          "image": "images/cheesecakes-strawberry.jpg"
         },
         {
           "name": "Chocolate",
           "price": 1200,
-          "image": "images/cheesecakes-chocolate.jpg",
-          "desc": "Dark-chocolate cheesecake — dense, glossy, decadent."
+          "unit": "per 500g",
+          "desc": "Dark-chocolate cheesecake — dense, glossy, decadent.",
+          "image": "images/cheesecakes-chocolate.jpg"
         },
         {
           "name": "Espresso",
           "price": 1200,
-          "image": "images/cheesecakes-espresso.jpg",
-          "desc": "A deep coffee hit set into velvety cheesecake."
+          "unit": "per 500g",
+          "desc": "A deep coffee hit set into velvety cheesecake.",
+          "image": "images/cheesecakes-espresso.jpg"
         },
         {
           "name": "Oreo",
           "price": 1000,
-          "image": "images/cheesecakes-oreo.jpg",
-          "desc": "Cookies-and-cream cheesecake for the young at heart."
+          "unit": "per 500g",
+          "desc": "Cookies-and-cream cheesecake for the young at heart.",
+          "image": "images/cheesecakes-oreo.jpg"
         },
         {
           "name": "Gulab Jamun",
           "price": 1200,
-          "image": "images/cheesecakes-gulab-jamun.jpg",
-          "desc": "Syrup-soaked gulab jamun folded into creamy cheese."
+          "unit": "per 500g",
+          "desc": "Syrup-soaked gulab jamun folded into creamy cheese.",
+          "image": "images/cheesecakes-gulab-jamun.jpg"
         },
         {
           "name": "Kunafa",
           "price": 1400,
-          "image": "images/cheesecakes-kunafa.jpg",
+          "unit": "per 500g",
           "desc": "Crisp golden kunafa over rich cheesecake — a Middle-Eastern showstopper.",
           "tags": [
-            "signature"
-          ]
+            "new"
+          ],
+          "image": "images/cheesecakes-kunafa.jpg"
         },
         {
           "name": "Mango",
           "price": 1200,
-          "image": "images/cheesecakes-mango.jpg",
+          "unit": "per 500g",
           "desc": "Sunny Alphonso mango cheesecake — pure summer.",
           "tags": [
             "seasonal"
-          ]
+          ],
+          "image": "images/cheesecakes-mango.jpg"
         },
         {
           "name": "Mint",
           "price": 1000,
-          "image": "images/cheesecakes-mint.jpg",
-          "desc": "Cool, fresh mint set into a smooth, light cheesecake."
+          "unit": "per 500g",
+          "desc": "Cool, fresh mint set into a smooth, light cheesecake.",
+          "image": "images/cheesecakes-mint.jpg"
         },
         {
           "name": "Burnt Basque",
           "price": 1500,
-          "image": "images/cheesecakes-burnt-basque.jpg",
+          "unit": "per 500g",
           "desc": "The caramelised, custardy Basque cheesecake — deeply toasted top, molten centre.",
           "tags": [
-            "signature"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "brownies-truffle",
-      "name": "Brownies & Truffle",
-      "kicker": "For the Chocoholics",
-      "blurb": "Fudgy, gooey and gloriously over the top.",
-      "image": "images/brownies-truffle-fudge-brownies.jpg",
-      "items": [
-        {
-          "name": "Fudge Brownies",
-          "price": 600,
-          "unit": "per 1 lb (≈450g)",
-          "image": "images/brownies-truffle-fudge-brownies.jpg",
-          "desc": "Dense, gooey and crackle-topped — the ultimate fudge brownie.",
-          "tags": [
-            "bestseller"
-          ]
-        },
-        {
-          "name": "Chocolate Truffle Cake",
-          "price": 1000,
-          "unit": "per 1 lb (≈450g)",
-          "image": "images/brownies-truffle-chocolate-truffle-cake.jpg",
-          "desc": "Layers of chocolate sponge and silky truffle ganache — celebration-grade.",
-          "tags": [
-            "signature"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "doughnuts-rolls",
-      "name": "Doughnuts, Bombolonis & Rolls",
-      "kicker": "Boxed to Share",
-      "blurb": "Pillowy fried doughnuts, cream-filled bombolonis and sticky cinnamon rolls — sold by the box.",
-      "image": "images/doughnuts-rolls-doughnuts-bombolonis.jpg",
-      "items": [
-        {
-          "name": "Doughnuts / Bombolonis",
-          "image": "images/doughnuts-rolls-doughnuts-bombolonis.jpg",
-          "desc": "Soft, fluffy and filled — glazed doughnuts and cream-stuffed bombolonis.",
-          "tags": [
-            "bestseller"
+            "signature",
+            "new"
           ],
-          "price": [
-            {
-              "label": "Box of 2",
-              "value": 150
-            },
-            {
-              "label": "Box of 4",
-              "value": 250
-            },
-            {
-              "label": "Box of 6",
-              "value": 400
-            }
-          ]
-        },
-        {
-          "name": "Honey Cinnamon Rolls",
-          "image": "images/doughnuts-rolls-honey-cinnamon-rolls.jpg",
-          "desc": "Warm, gooey swirls of cinnamon finished with a honey glaze.",
-          "price": [
-            {
-              "label": "Box of 3",
-              "value": 300
-            },
-            {
-              "label": "Box of 6",
-              "value": 500
-            }
-          ]
+          "image": "images/cheesecakes-burnt-basque.jpg"
         }
       ]
     },
     {
       "id": "cookies",
       "name": "Cookies",
-      "kicker": "The Cookie Jar",
+      "kicker": "The Cookie box",
       "blurb": "Baked in small batches — buttery, crumbly and dangerously moreish.",
       "unit": "per 250g",
       "note": "Priced per 250g · Sugar-free options available",
@@ -569,189 +601,220 @@ window.SITE = {
         {
           "name": "Nankhatai",
           "price": 200,
-          "image": "images/cookies-nankhatai.jpg",
-          "desc": "The melt-in-the-mouth Indian shortbread — ghee-rich and cardamom-scented."
+          "unit": "per 250g",
+          "desc": "The melt-in-the-mouth Indian shortbread — ghee-rich and cardamom-scented.",
+          "tags": [
+            "signature"
+          ],
+          "image": "images/cookies-nankhatai.jpg"
         },
         {
           "name": "Choco Chip",
           "price": 300,
-          "image": "images/cookies-choco-chip.jpg",
-          "desc": "The forever favourite — buttery cookie loaded with chocolate.",
+          "unit": "per 250g",
+          "desc": "The forever favourite — buttery cookie loaded with chocochips",
           "tags": [
             "bestseller"
-          ]
+          ],
+          "image": "images/cookies-choco-chip.jpg"
         },
         {
           "name": "Kesar Pista",
           "price": 350,
-          "image": "images/cookies-kesar-pista.jpg",
-          "desc": "Saffron and pistachio shortbread — festive and fragrant."
+          "unit": "per 250g",
+          "desc": "Saffron and pistachio shortbread — best for festive season",
+          "image": "images/cookies-kesar-pista.jpg"
         },
         {
           "name": "Rose Pistachio",
           "price": 350,
-          "image": "images/cookies-rose-pistachio.jpg",
-          "desc": "Delicate rose crumb studded with pistachio."
+          "unit": "per 250g",
+          "desc": "Delicate rose crumb studded with pistachio.",
+          "image": "images/cookies-rose-pistachio.jpg"
         },
         {
           "name": "Watermelon",
           "price": 250,
-          "image": "images/cookies-watermelon.jpg",
-          "desc": "Playful pink-and-green cookies with a fruity twist."
+          "unit": "per 250g",
+          "desc": "Playful pink-and-green cookies with a fruity twist.",
+          "image": "images/cookies-watermelon.jpg"
         },
         {
-          "name": "Namkeen",
+          "name": "Namkeen cookies (Jeera, Ajwain, Mixed herbs, Chilly flakes, peri peri)",
           "price": 200,
-          "image": "images/cookies-namkeen.jpg",
-          "desc": "Savoury-spiced tea-time cookies for the not-so-sweet."
+          "unit": "per 250g",
+          "desc": "Savoury-spiced tea-time cookies for the not-so-sweet.",
+          "tags": [
+            "bestseller"
+          ],
+          "image": "images/cookies-namkeen.jpg"
         },
         {
           "name": "Red Velvet",
           "price": 250,
-          "image": "images/cookies-red-velvet.jpg",
-          "desc": "Cocoa-red cookies with white-chocolate chunks."
+          "unit": "per 250g",
+          "desc": "Cocoa-red cookies with white-chocolate chunks.",
+          "image": "images/cookies-red-velvet.jpg"
         },
         {
           "name": "Oats & Dry Fruits",
           "price": 300,
-          "image": "images/cookies-oats-dry-fruits.jpg",
-          "desc": "Wholesome oat cookie packed with nuts and raisins."
+          "unit": "per 250g",
+          "desc": "Wholesome oat cookie packed with nuts and raisins.",
+          "image": "images/cookies-oats-dry-fruits.jpg"
         },
         {
           "name": "Coconut",
-          "price": 200,
-          "image": "images/cookies-coconut.jpg",
-          "desc": "Toasted coconut macaroon-style crumb."
+          "price": 250,
+          "unit": "per 250g",
+          "desc": "Toasted coconut macaroon-style crumb.",
+          "tags": [
+            "bestseller"
+          ],
+          "image": "images/cookies-coconut.jpg"
         },
         {
           "name": "Raagi",
           "price": 260,
-          "image": "images/cookies-raagi.jpg",
-          "desc": "Nutty finger-millet cookie — the guilt-free treat."
+          "unit": "per 250g",
+          "desc": "Nutty finger-millet cookie — the guilt-free treat.",
+          "image": "images/cookies-raagi.jpg"
         },
         {
           "name": "Granola",
           "price": 300,
-          "image": "images/cookies-granola.jpg",
-          "desc": "Crunchy granola-clustered cookie, seeds and all."
+          "unit": "per 250g",
+          "desc": "Crunchy granola-clustered cookie, seeds and all.",
+          "image": "images/cookies-granola.jpg"
         },
         {
           "name": "Lime Coconut",
           "price": 200,
-          "image": "images/cookies-lime-coconut.jpg",
-          "desc": "Zesty lime meets toasted coconut."
+          "unit": "per 250g",
+          "desc": "Zesty lime meets toasted coconut.",
+          "image": "images/cookies-lime-coconut.jpg"
         },
         {
           "name": "Oatmeal Choco Chip",
           "price": 250,
-          "image": "images/cookies-oatmeal-choco-chip.jpg",
-          "desc": "Chewy oatmeal cookie with melting chocolate."
+          "unit": "per250g",
+          "desc": "Chewy oatmeal cookie with melting chocolate.",
+          "image": "images/cookies-oatmeal-choco-chip.jpg"
         },
         {
           "name": "Multigrain",
           "price": 250,
-          "image": "images/cookies-multigrain.jpg",
-          "desc": "Hearty multigrain cookie — wholesome and crunchy."
+          "unit": "per 250g",
+          "desc": "Hearty multigrain cookie — wholesome and crunchy.",
+          "image": "images/cookies-multigrain.jpg"
         },
         {
           "name": "Chocolate",
           "price": 300,
-          "image": "images/cookies-chocolate.jpg",
-          "desc": "Double-chocolate cookie, crisp edge and fudgy middle."
+          "unit": "per 250g",
+          "desc": "Double-chocolate cookie, crisp edge and fudgy middle.",
+          "image": "images/cookies-chocolate.jpg"
         },
         {
           "name": "Peanut Butter",
           "price": 250,
-          "image": "images/cookies-peanut-butter.jpg",
-          "desc": "Rich, nutty peanut-butter cookie with a soft bite."
+          "unit": "per 250g",
+          "desc": "Rich, nutty peanut-butter cookie with a soft bite.",
+          "image": "images/cookies-peanut-butter.jpg"
         },
         {
-          "name": "Good Day Style",
-          "price": 200,
-          "image": "images/cookies-good-day-style.jpg",
-          "desc": "The nostalgic buttery biscuit — homemade."
+          "name": "Atta cookies",
+          "price": 250,
+          "unit": "per 250g",
+          "desc": "healthy indulgence in every bite, guilt free crunch",
+          "tags": [
+            "bestseller"
+          ],
+          "image": "images/cookies-atta-cookies.jpg"
         },
         {
-          "name": "Jam Filled",
-          "price": 200,
-          "image": "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=1100&q=80",
-          "desc": "Buttery thumbprint cookies with a jewel of fruit jam."
+          "name": "cookie tin",
+          "price": 400,
+          "unit": "per 200g",
+          "desc": "Instagram viral cookie tin, the sweetest gift to give. premium cookies packed in a reusable tin.",
+          "tags": [
+            "bestseller",
+            "new"
+          ],
+          "image": "images/cookies-cookie-tin.jpg"
         }
       ]
     },
     {
       "id": "specials",
-      "name": "Signatures & Seasonal",
-      "kicker": "Chef's Specials",
+      "name": "special bakes ",
+      "kicker": "extras are always best ",
       "blurb": "Small-batch stars, festive bakes and only-in-season treasures.",
       "image": "images/specials-mango-cake.jpg",
       "items": [
         {
-          "name": "Mango Cake",
-          "price": 600,
-          "image": "images/specials-mango-cake.jpg",
-          "desc": "Fresh mango and cream on soft sponge — only while mangoes are at their best.",
-          "tags": [
-            "seasonal"
-          ]
-        },
-        {
-          "name": "Mava Malai Cake",
-          "price": 800,
-          "image": "images/specials-mava-malai-cake.jpg",
-          "desc": "Ultra-rich mava-malai cake — dense, creamy and indulgent.",
-          "tags": [
-            "signature"
-          ]
-        },
-        {
-          "name": "Almond Caramel Cake",
-          "price": 800,
-          "image": "images/specials-almond-caramel-cake.jpg",
-          "desc": "Toasted almond sponge under a glossy caramel veil."
-        },
-        {
           "name": "Sandwich Cake",
-          "price": 500,
-          "unit": "per 1 lb (≈450g)",
-          "image": "images/specials-sandwich-cake.jpg",
-          "desc": "A layered cream sandwich cake — light, pretty and party-ready."
+          "price": 600,
+          "unit": "per 500g",
+          "desc": "looks cake tastes sandwich, A layered cream sandwich cake — light, pretty and party-ready. customizations available",
+          "tags": [
+            "new"
+          ],
+          "image": "images/specials-sandwich-cake.jpg"
         },
         {
           "name": "Banto Cakes",
           "price": 300,
           "unit": "starting from",
-          "image": "images/specials-banto-cakes.jpg",
-          "desc": "Adorable mini bento-style cakes for one — hand-decorated on request.",
+          "desc": "Adorable mini bento-style cakes for one — hand-decorated on request. customizations available",
+          "image": "images/specials-banto-cakes.jpg"
+        },
+        {
+          "name": "Bundt Cake/Ring cake",
+          "price": 600,
+          "unit": "per 500g",
+          "desc": "Traditional European cake, A beautifully sculpted ring cake with a tender, buttery crumb.",
           "tags": [
             "new"
-          ]
+          ],
+          "image": "images/specials-bundt-cake.jpg"
         },
         {
-          "name": "Bundt Cake",
-          "price": 700,
-          "image": "images/specials-bundt-cake.jpg",
-          "desc": "A beautifully sculpted ring cake with a tender, buttery crumb."
-        },
-        {
-          "name": "Vrat / Fasting Cakes",
-          "price": 700,
-          "image": "images/specials-vrat-fasting-cakes.jpg",
-          "desc": "Faral-friendly cakes made with permitted flours for fasting days."
+          "name": "Falahari/Fasting Cakes",
+          "price": 500,
+          "unit": "per 500g",
+          "desc": "Faral-friendly cakes made with permitted flours for fasting days.",
+          "image": "images/specials-vrat-fasting-cakes.jpg"
         },
         {
           "name": "Muffins",
-          "price": 50,
-          "unit": "each",
-          "image": "images/specials-muffins.jpg",
-          "desc": "Bakery-style domed muffins — grab-and-go goodness."
+          "price": [
+            {
+              "label": "4 piece",
+              "value": 200
+            },
+            {
+              "label": "6 piece",
+              "value": 300
+            }
+          ],
+          "desc": "Bakery-style domed muffins — grab-and-go goodness. flavours of your choice",
+          "image": "images/specials-muffins.jpg"
         },
         {
           "name": "Cupcakes",
-          "price": 50,
-          "unit": "each",
-          "image": "images/specials-cupcakes.jpg",
-          "desc": "Swirled, sprinkled and frosted by hand."
+          "price": [
+            {
+              "label": "4 piece",
+              "value": 300
+            },
+            {
+              "label": "6 piece",
+              "value": 500
+            }
+          ],
+          "desc": "Swirled, sprinkled and frosted by hand. flavours of your choice.",
+          "image": "images/specials-cupcakes.jpg"
         },
         {
           "name": "Mava Pizza",
@@ -765,33 +828,93 @@ window.SITE = {
               "value": 500
             }
           ],
-          "desc": "A decadent sweet 'pizza' base loaded with rich mava — sliced and shared.",
+          "desc": "A decadent sweet 'pizza' base loaded with rich mava — sliced and shared. we are the OG of this dish",
           "tags": [
-            "signature"
+            "new"
           ],
           "image": "images/mava-mava-pizza.jpg"
+        },
+        {
+          "name": "Doughnuts",
+          "price": [
+            {
+              "label": "Box of 2",
+              "value": 150
+            },
+            {
+              "label": "Box of 4",
+              "value": 250
+            },
+            {
+              "label": "Box of 6",
+              "value": 400
+            }
+          ],
+          "desc": "Soft, fluffy and filled — glazed doughnuts with your choice of flavors",
+          "image": "images/doughnuts-rolls-doughnuts-bombolonis.jpg"
+        },
+        {
+          "name": "Honey Cinnamon Rolls",
+          "price": [
+            {
+              "label": "Box of 3",
+              "value": 300
+            },
+            {
+              "label": "Box of 6",
+              "value": 500
+            }
+          ],
+          "desc": "Warm, gooey swirls of cinnamon finished with a honey glaze.",
+          "tags": [
+            "new"
+          ],
+          "image": "images/doughnuts-rolls-honey-cinnamon-rolls.jpg"
+        },
+        {
+          "name": "Fudge Brownies",
+          "price": 600,
+          "unit": "per 500g",
+          "desc": "Dense, gooey and crackle-topped — the ultimate fudge brownie.",
+          "tags": [
+            "bestseller"
+          ],
+          "image": "images/brownies-truffle-fudge-brownies.jpg"
+        },
+        {
+          "name": "Bombolone",
+          "price": [
+            {
+              "label": "box of 2",
+              "value": 200
+            },
+            {
+              "label": "box of 4",
+              "value": 350
+            },
+            {
+              "label": "box of 6",
+              "value": 500
+            }
+          ],
+          "desc": "cloud-soft dough + gooey filling. one bite and you're in heaven",
+          "tags": [
+            "new"
+          ],
+          "image": "images/specials-bombolone.jpg"
         }
-      ]
-    },
-    {
-      "id": "mava",
-      "name": "Mava Pizza",
-      "kicker": "A House Curiosity",
-      "blurb": "Our sweet mava 'pizza' — a rich, shareable indulgence you won't find just anywhere.",
-      "image": "images/mava-mava-pizza.jpg",
-      "items": []
+      ],
+      "note": "order 2 days prior"
     },
     {
       "id": "breads",
-      "name": "Artisan Breads",
-      "kicker": "The Bakery Counter",
-      "blurb": "Slow-fermented, baked fresh each morning — real bread, nothing added.",
+      "name": "Artisan Breads & buns ",
+      "kicker": "The Bakery Counter newly started ",
+      "blurb": "Slow-fermented, baked fresh on order — real bread, nothing added, no artificial preservatives ",
       "image": "images/breads-sandwich-bread.jpg",
       "items": [
         {
-          "name": "Sandwich Bread",
-          "image": "images/breads-sandwich-bread.jpg",
-          "desc": "Soft everyday white loaf — perfect for toast and tiffin.",
+          "name": "Sandwich/white Bread",
           "price": [
             {
               "label": "200g",
@@ -801,7 +924,9 @@ window.SITE = {
               "label": "300g",
               "value": 65
             }
-          ]
+          ],
+          "desc": "Soft everyday white loaf — perfect for toast and tiffin.",
+          "image": "images/breads-sandwich-bread.jpg"
         },
         {
           "name": "Multigrain Bread",
@@ -822,9 +947,7 @@ window.SITE = {
           ]
         },
         {
-          "name": "Wheat Bread",
-          "image": "images/breads-wheat-bread.jpg",
-          "desc": "Wholesome 100% wheat loaf, soft-crumbed and light.",
+          "name": "Wheat/brown bread",
           "price": [
             {
               "label": "200g",
@@ -832,14 +955,14 @@ window.SITE = {
             },
             {
               "label": "300g",
-              "value": 60
+              "value": 65
             }
-          ]
+          ],
+          "desc": "Wholesome 100% wheat loaf, soft-crumbed and light.",
+          "image": "images/breads-wheat-bread.jpg"
         },
         {
           "name": "Suji Bread",
-          "image": "images/breads-suji-bread.jpg",
-          "desc": "Semolina loaf with a lovely golden crust and tender bite.",
           "price": [
             {
               "label": "200g",
@@ -849,7 +972,9 @@ window.SITE = {
               "label": "300g",
               "value": 90
             }
-          ]
+          ],
+          "desc": "Semolina loaf with a lovely golden crust and tender bite.",
+          "image": "images/breads-suji-bread.jpg"
         },
         {
           "name": "Focaccia",
@@ -892,7 +1017,8 @@ window.SITE = {
           ],
           "image": "images/buns-pav-laadi-pav.jpg"
         }
-      ]
+      ],
+      "note": "order 2 days prior "
     }
   ]
 };
