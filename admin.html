@@ -304,15 +304,19 @@
     var PERM_MSG="Your access key can't save yet. On GitHub, open your “cakery-admin” key → Repository access = muditas-cakery, Permissions → Contents = Read and write → Update token, then Publish again.";
     function ghHeaders(){ return {"Authorization":"Bearer "+token,"Accept":"application/vnd.github+json","X-GitHub-Api-Version":"2022-11-28"}; }
     function b64utf8(str){ var b=new TextEncoder().encode(str), s=""; for(var i=0;i<b.length;i++) s+=String.fromCharCode(b[i]); return btoa(s); }
-    function getSha(path){ return fetch(API+encodeURI(path)+"?ref="+BRANCH,{headers:ghHeaders()}).then(function(r){ if(r.status===404) return null; if(r.status===403) throw new Error(PERM_MSG); if(!r.ok) throw new Error("Read failed ("+r.status+")"); return r.json().then(function(j){return j.sha;}); }); }
-    function putFile(path,b64,msg,sha){ var body={message:msg,content:b64,branch:BRANCH}; if(sha) body.sha=sha; return fetch(API+encodeURI(path),{method:"PUT",headers:ghHeaders(),body:JSON.stringify(body)}).then(function(r){ if(!r.ok){ if(r.status===403) throw new Error(PERM_MSG); return r.json().catch(function(){return{};}).then(function(j){throw new Error((j&&j.message)||("Save failed "+r.status));}); } return r.json(); }); }
+    function getSha(path){ return fetch(API+encodeURI(path)+"?ref="+BRANCH+"&_="+Date.now(),{headers:ghHeaders(),cache:"no-store"}).then(function(r){ if(r.status===404) return null; if(r.status===403) throw new Error(PERM_MSG); if(!r.ok) throw new Error("Read failed ("+r.status+")"); return r.json().then(function(j){return j.sha;}); }); }
+    function _put(path,b64,msg,sha){ var body={message:msg,content:b64,branch:BRANCH}; if(sha) body.sha=sha; return fetch(API+encodeURI(path),{method:"PUT",headers:ghHeaders(),cache:"no-store",body:JSON.stringify(body)}); }
+    function putFile(path,b64,msg){
+      return getSha(path).then(function(sha){ return _put(path,b64,msg,sha); })
+        .then(function(r){ if(r.status===409){ return getSha(path).then(function(s2){ return _put(path,b64,msg,s2); }); } return r; })
+        .then(function(r){ if(r.status===403) throw new Error(PERM_MSG); if(!r.ok) return r.json().catch(function(){return{};}).then(function(j){ throw new Error((j&&j.message)||("Save failed "+r.status)); }); return r.json(); });
+    }
     function serialize(){ var out=clone(S); var header="/* MUDITA'S CAKERY — menu data (managed by the Admin editor) */\n"; return header+"window.SITE = "+JSON.stringify(out,null,2)+";\n"; }
     function publish(){
       if(!dirty){ toast("Nothing to publish"); return; }
       $("#publish").disabled=true; var paths=Object.keys(pending); var chain=Promise.resolve();
-      paths.forEach(function(p){ chain=chain.then(function(){ setStatus("Uploading photo…"); return getSha(p); }).then(function(sha){ return putFile(p,pending[p],"admin: image "+p,sha); }).then(function(){ delete pending[p]; }); });
-      chain.then(function(){ setStatus("Saving…"); return getSha(FILE); })
-        .then(function(sha){ return putFile(FILE,b64utf8(serialize()),"admin: update site",sha); })
+      paths.forEach(function(p){ chain=chain.then(function(){ setStatus("Uploading photo…"); return putFile(p,pending[p],"admin: image "+p); }).then(function(){ delete pending[p]; }); });
+      chain.then(function(){ setStatus("Saving…"); return putFile(FILE,b64utf8(serialize()),"admin: update site"); })
         .then(function(){ dirty=false; $("#publish").disabled=true; setStatus("Published ✓ — live in ~1 minute"); toast("Published! Your site updates in ~1 minute 🎂"); })
         .catch(function(e){ $("#publish").disabled=false; setStatus("Publish failed"); toast(e.message||"Publish failed",true); });
     }
