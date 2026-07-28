@@ -997,6 +997,13 @@ window.SITE = {
           "desc": "Rustic, airy Italian loaf with a crackling crust."
         },
         {
+          "name": "Burger Buns (Atta)",
+          "price": 70,
+          "unit": "2 pieces",
+          "desc": "Wholewheat burger buns for a wholesome bite.",
+          "image": "images/buns-pav-burger-buns-atta.jpg"
+        },
+        {
           "name": "Burger Buns (White)",
           "price": 60,
           "unit": "2 pieces",
@@ -1012,13 +1019,6 @@ window.SITE = {
             "bestseller"
           ],
           "image": "images/buns-pav-laadi-pav.jpg"
-        },
-        {
-          "name": "Burger Buns (Atta)",
-          "price": 70,
-          "unit": "2 pieces",
-          "desc": "Wholewheat burger buns for a wholesome bite.",
-          "image": "images/buns-pav-burger-buns-atta.jpg"
         }
       ],
       "note": "order 2 days prior "
