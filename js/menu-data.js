@@ -40,7 +40,7 @@ window.SITE = {
         "l": "Eggless, always"
       },
       {
-        "n": "500+",
+        "n": "200+",
         "l": "loyal customers "
       },
       {
@@ -48,7 +48,7 @@ window.SITE = {
         "l": "Days' notice"
       }
     ],
-    "image": "images/about-1785225137841.jpg"
+    "image": "images/about-1785228700276.jpg"
   },
   "howToOrder": {
     "kicker": "How to Order",
@@ -56,27 +56,26 @@ window.SITE = {
     "steps": [
       {
         "t": "Browse & choose",
-        "d": "Pick your cake, flavour and any bakes you love from the menu."
+        "d": "Pick your cake, flavor and any bakes you love from the menu."
       },
       {
         "t": "Message us",
-        "d": "Send your choice of flavor, size of cake you want, design of a cake you want us to customize for you and date of your occasion. WhatsApp — or give us a call. "
+        "d": "Send your choice of design, size, flavor and date on WhatsApp — or give us a call."
       },
       {
-        "t": "once the details are confirmed ",
+        "t": "Confirm the details",
         "d": "We'll confirm price, timing and any customisation, then take your order."
       },
       {
         "t": "Fresh-baked & ready",
-        "d": "Collect from our kitchen, or ask about local delivery on your day. delivery depends on your location"
+        "d": "Collect from our kitchen, or ask about local delivery on your day."
       }
     ],
     "delivery": [
       "Please order at least 1–2 days in advance. Cheesecakes need at least 3 days' notice.",
-      "Pickup from 191, Sabzibazar, Nayapura. behind chaman hotel",
+      "Pickup from 191, Sabzibazar, Nayapura. behind chaman hotel ",
       "Local delivery available on request — share your area when you order.",
-      "Every cake & bake is 100% eggless. Sugar-free options available on most items — just ask.",
-      "please do not ask for pay on delivery or after delivery we only accept pre paid orders that's our policy and delivery charges are excluded "
+      "Every cake & bake is 100% eggless. Sugar-free options available on most items — just ask."
     ]
   },
   "faq": [
@@ -90,15 +89,15 @@ window.SITE = {
     },
     {
       "q": "How do I place an order?",
-      "a": "Message us on WhatsApp or call 9588890392 with your flavour, size and date. We'll confirm the details and share payment options."
+      "a": "Message us on WhatsApp or call 9588890392 with your flavour, size, design and date. We'll confirm the details and share payment options."
     },
     {
       "q": "Can I customise the flavour, size or design?",
       "a": "Absolutely. Tell us the occasion and what you have in mind — we'll tailor the cake to you. Custom sizes beyond the menu are available on request."
     },
     {
-      "q": "Do you deliver?",
-      "a": "Pickup is from our kitchen in Nayapura. Local delivery is available on request — please share your area when ordering so we can confirm."
+      "q": "Do you deliver? and is it chargeable? ",
+      "a": "Pickup is from our kitchen in Nayapura. Local delivery is available depends on your location — please share your area when ordering for delivery so we can confirm. and yes we do not have free delivery options its always chargeable. "
     },
     {
       "q": "How are prices calculated?",
