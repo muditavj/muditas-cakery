@@ -358,7 +358,24 @@
     $("#signout").addEventListener("click",function(){ if(confirm("Sign out? You'll need your key again.")){ localStorage.removeItem("cakery_gh_token"); location.reload(); } });
     $("#saveTok").addEventListener("click",function(){ var v=$("#tok").value.trim(); if(!v){toast("Paste your key first",true);return;} token=v; localStorage.setItem("cakery_gh_token",v); setStatus("Checking key…"); fetch("https://api.github.com/repos/"+OWNER+"/"+REPO,{headers:ghHeaders()}).then(function(r){ if(r.ok){toast("Key saved — you're in!"); boot();} else { localStorage.removeItem("cakery_gh_token"); token=""; toast("That key didn't work",true); setStatus(""); } }).catch(function(){toast("Network error",true);}); });
 
-    function boot(){ if(!window.SITE){toast("Could not load menu data",true);return;} S=clone(window.SITE); if(!S.ui) S.ui={}; $("#gate").classList.add("hidden"); $("#app").classList.remove("hidden"); setStatus(""); renderTabs(); renderPanel(); }
+    function loadFresh(cb){
+      // Always pull the true latest menu straight from GitHub (never a cached copy)
+      fetch(API+encodeURI(FILE)+"?ref="+BRANCH+"&_="+Date.now(),{headers:ghHeaders(),cache:"no-store"})
+        .then(function(r){ if(!r.ok) throw 0; return r.json(); })
+        .then(function(j){
+          var bin=atob(String(j.content).replace(/\s/g,"")), bytes=new Uint8Array(bin.length);
+          for(var i=0;i<bin.length;i++) bytes[i]=bin.charCodeAt(i);
+          var txt=new TextDecoder().decode(bytes);
+          var jsonStr=txt.replace(/^[\s\S]*?window\.SITE\s*=\s*/,"").replace(/;\s*$/,"");
+          cb(JSON.parse(jsonStr));
+        })
+        .catch(function(){ cb(clone(window.SITE)); });
+    }
+    function boot(){
+      if(!window.SITE){ toast("Could not load menu data",true); return; }
+      $("#gate").classList.add("hidden"); $("#app").classList.remove("hidden"); setStatus("Loading latest…");
+      loadFresh(function(data){ S=data||clone(window.SITE); if(!S.ui) S.ui={}; setStatus(""); renderTabs(); renderPanel(); });
+    }
     if(token) boot(); else $("#gate").classList.remove("hidden");
   })();
   </script>
