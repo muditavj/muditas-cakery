@@ -8,13 +8,12 @@ window.SITE = {
   },
   "contact": {
     "phone": "9588890392",
-    "whatsapp": "9588890392",
-    "address": "191, Sabzibazar, Nayapura behind chaman hotel",
+    "whatsapp": "919588890392",
+    "address": "191, Sabzibazar, Nayapura",
     "instagram": "@muditas_cakery",
     "instagramUrl": "https://www.instagram.com/muditas_cakery"
   },
   "notes": [
-    "please do follow us on Instagram ",
     "Please order at least 1–2 days in advance.",
     "Cheesecake orders require at least 3 days' notice.",
     "Sugar-free options available on most cakes & cookies.",
@@ -25,7 +24,7 @@ window.SITE = {
     "heroPill": "Freshly Baked · Home Bakery",
     "egglessBadge": "100% Eggless bakery",
     "searchPlaceholder": "Search cakes, cookies, breads…",
-    "galleryTitle": "these are some of our customized cakes which we made specially on order and this is our USP. ",
+    "galleryTitle": "Our Gallery",
     "faqTitle": "Frequently Asked"
   },
   "story": {
@@ -42,14 +41,14 @@ window.SITE = {
       },
       {
         "n": "200+",
-        "l": "loyal customers "
+        "l": "Cakes & bakes"
       },
       {
         "n": "1–3",
         "l": "Days' notice"
       }
     ],
-    "image": "images/about-1785228700276.jpg"
+    "image": "images/signature-cakes-black-forest.jpg"
   },
   "howToOrder": {
     "kicker": "How to Order",
@@ -57,11 +56,11 @@ window.SITE = {
     "steps": [
       {
         "t": "Browse & choose",
-        "d": "Pick your cake, flavor and any bakes you love from the menu."
+        "d": "Pick your cake, flavour and any bakes you love from the menu."
       },
       {
         "t": "Message us",
-        "d": "Send your choice of design, size, flavor and date on WhatsApp — or give us a call."
+        "d": "Send your choice, size and date on WhatsApp — or give us a call."
       },
       {
         "t": "Confirm the details",
@@ -74,7 +73,7 @@ window.SITE = {
     ],
     "delivery": [
       "Please order at least 1–2 days in advance. Cheesecakes need at least 3 days' notice.",
-      "Pickup from 191, Sabzibazar, Nayapura. behind chaman hotel ",
+      "Pickup from 191, Sabzibazar, Nayapura.",
       "Local delivery available on request — share your area when you order.",
       "Every cake & bake is 100% eggless. Sugar-free options available on most items — just ask."
     ]
@@ -90,15 +89,15 @@ window.SITE = {
     },
     {
       "q": "How do I place an order?",
-      "a": "Message us on WhatsApp or call 9588890392 with your flavour, size, design and date. We'll confirm the details and share payment options."
+      "a": "Message us on WhatsApp or call 9588890392 with your flavour, size and date. We'll confirm the details and share payment options."
     },
     {
       "q": "Can I customise the flavour, size or design?",
       "a": "Absolutely. Tell us the occasion and what you have in mind — we'll tailor the cake to you. Custom sizes beyond the menu are available on request."
     },
     {
-      "q": "Do you deliver? and is it chargeable? ",
-      "a": "Pickup is from our kitchen in Nayapura. Local delivery is available depends on your location — please share your area when ordering for delivery so we can confirm. and yes we do not have free delivery options its always chargeable. "
+      "q": "Do you deliver?",
+      "a": "Pickup is from our kitchen in Nayapura. Local delivery is available on request — please share your area when ordering so we can confirm."
     },
     {
       "q": "How are prices calculated?",
@@ -106,15 +105,18 @@ window.SITE = {
     }
   ],
   "gallery": [
-    "images/gallery-1785229699212.jpg",
-    "images/gallery-1785229742642.jpg",
-    "images/gallery-1785229748582.jpg",
-    "images/gallery-1785229753842.jpg",
-    "images/gallery-1785229766057.jpg",
-    "images/gallery-1785229774249.jpg",
-    "images/gallery-1785229781125.jpg",
-    "images/gallery-1785229790150.jpg",
-    "images/gallery-1785229800066.jpg"
+    "images/cheesecakes-burnt-basque.jpg",
+    "images/signature-cakes-black-forest.jpg",
+    "images/brownies-truffle-chocolate-truffle-cake.jpg",
+    "images/doughnuts-rolls-honey-cinnamon-rolls.jpg",
+    "images/cheesecakes-kunafa.jpg",
+    "images/signature-cakes-strawberry.jpg",
+    "images/cookies-chocolate.jpg",
+    "images/specials-banto-cakes.jpg",
+    "images/cheesecakes-mango.jpg",
+    "images/breads-focaccia.jpg",
+    "images/signature-cakes-chocolate-nutella.jpg",
+    "images/specials-cupcakes.jpg"
   ],
   "categories": [
     {
@@ -123,7 +125,7 @@ window.SITE = {
       "kicker": "all flavours available with your personal customization ",
       "blurb": "Soft, moist sponge layered and iced by hand. Choose your flavour — we bake it fresh for your day.",
       "unit": "per 500g",
-      "note": "Priced per 500g · Please order 1–2 days prior",
+      "note": "Please order 1–2 days prior",
       "image": "images/signature-cakes-vanilla.jpg",
       "items": [
         {
@@ -326,7 +328,7 @@ window.SITE = {
       "kicker": "freshly baked on order ",
       "blurb": "Buttery loaf-style cakes made for chai-time — no frosting, all comfort.",
       "unit": "per 250g",
-      "note": "Priced per 250g · Sugar-free options available",
+      "note": " Sugar-free options available",
       "image": "images/dry-cakes-vanilla.jpg",
       "items": [
         {
@@ -592,11 +594,11 @@ window.SITE = {
     },
     {
       "id": "cookies",
-      "name": "Crispy Cookies",
+      "name": "Crunchy Cookies",
       "kicker": "The Cookie box",
       "blurb": "Baked in small batches — buttery, crumbly and dangerously moreish.",
       "unit": "per 250g",
-      "note": "Priced per 250g · Sugar-free options available",
+      "note": " Sugar-free options available",
       "image": "images/cookies-nankhatai.jpg",
       "items": [
         {
