@@ -932,6 +932,16 @@ window.SITE = {
           "image": "images/breads-sandwich-bread.jpg"
         },
         {
+          "name": "Laadi Pav",
+          "price": 60,
+          "unit": "6 pieces",
+          "desc": "Classic soft ladi-pav — for vada-pav, pav-bhaji and misal.",
+          "tags": [
+            "bestseller"
+          ],
+          "image": "images/buns-pav-laadi-pav.jpg"
+        },
+        {
           "name": "Multigrain Bread",
           "image": "images/breads-multigrain-bread.jpg",
           "desc": "Hearty loaf packed with grains and seeds.",
@@ -1009,16 +1019,6 @@ window.SITE = {
           "unit": "2 pieces",
           "desc": "Wholewheat burger buns for a wholesome bite.",
           "image": "images/buns-pav-burger-buns-atta.jpg"
-        },
-        {
-          "name": "Laadi Pav",
-          "price": 60,
-          "unit": "6 pieces",
-          "desc": "Classic soft ladi-pav — for vada-pav, pav-bhaji and misal.",
-          "tags": [
-            "bestseller"
-          ],
-          "image": "images/buns-pav-laadi-pav.jpg"
         }
       ],
       "note": "order 2 days prior "
