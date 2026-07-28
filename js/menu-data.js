@@ -9,7 +9,7 @@ window.SITE = {
   "contact": {
     "phone": "9588890392",
     "whatsapp": "919588890392",
-    "address": "191, Sabzibazar, Nayapura",
+    "address": "191, Sabzibazar, Nayapura behind chaman hotel",
     "instagram": "@muditas_cakery",
     "instagramUrl": "https://www.instagram.com/muditas_cakery"
   },
@@ -22,9 +22,9 @@ window.SITE = {
   "currency": "₹",
   "ui": {
     "heroPill": "Freshly Baked · Home Bakery",
-    "egglessBadge": "100% Eggless, fassai certified ",
+    "egglessBadge": "100% Eggless",
     "searchPlaceholder": "Search cakes, cookies, breads…",
-    "galleryTitle": "Some pictures of our achievements and customised cakes we made people ",
+    "galleryTitle": "Achievements and customised cakes",
     "faqTitle": "Frequently Asked"
   },
   "story": {
@@ -105,18 +105,10 @@ window.SITE = {
     }
   ],
   "gallery": [
-    "images/cheesecakes-burnt-basque.jpg",
-    "images/signature-cakes-black-forest.jpg",
-    "images/brownies-truffle-chocolate-truffle-cake.jpg",
-    "images/doughnuts-rolls-honey-cinnamon-rolls.jpg",
-    "images/cheesecakes-kunafa.jpg",
-    "images/signature-cakes-strawberry.jpg",
-    "images/cookies-chocolate.jpg",
-    "images/specials-banto-cakes.jpg",
-    "images/cheesecakes-mango.jpg",
-    "images/breads-focaccia.jpg",
-    "images/signature-cakes-chocolate-nutella.jpg",
-    "images/specials-cupcakes.jpg"
+    "images/gallery-1785254324378.jpg",
+    "images/gallery-1785254349210.jpg",
+    "images/gallery-1785254368758.jpg",
+    "images/gallery-1785254381780.jpg"
   ],
   "categories": [
     {
