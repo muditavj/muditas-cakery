@@ -22,7 +22,7 @@ window.SITE = {
   "currency": "₹",
   "ui": {
     "heroPill": "Freshly Baked · Home Bakery",
-    "egglessBadge": "100% Eggless bakery",
+    "egglessBadge": "100% Eggless, fassai certified ",
     "searchPlaceholder": "Search cakes, cookies, breads…",
     "galleryTitle": "Our Gallery",
     "faqTitle": "Frequently Asked"
@@ -37,7 +37,7 @@ window.SITE = {
     "stats": [
       {
         "n": "100%",
-        "l": "Eggless, always"
+        "l": "Eggless"
       },
       {
         "n": "500+ ",
@@ -45,10 +45,10 @@ window.SITE = {
       },
       {
         "n": "1–3",
-        "l": "Days' notice"
+        "l": "Days prior order notice "
       }
     ],
-    "image": "images/about-1785231035467.jpg"
+    "image": "images/about-1785237429107.jpg"
   },
   "howToOrder": {
     "kicker": "How to Order",
@@ -125,7 +125,7 @@ window.SITE = {
       "kicker": "all flavours available with your personal customization ",
       "blurb": "Soft, moist sponge layered and iced by hand. Choose your flavour — we bake it fresh for your day.",
       "unit": "per 500g",
-      "note": "Priced per 500g · Please order 1–2 days prior",
+      "note": "Please order 1–2 days prior",
       "image": "images/signature-cakes-vanilla.jpg",
       "items": [
         {
@@ -280,17 +280,6 @@ window.SITE = {
           "image": "images/signature-cakes-gulab-jamun.jpg"
         },
         {
-          "name": "Chocolate Truffle Cake",
-          "price": 1000,
-          "unit": "per 500g",
-          "desc": "Layers of chocolate sponge and silky truffle ganache — celebration-grade.",
-          "tags": [
-            "bestseller",
-            "signature"
-          ],
-          "image": "images/brownies-truffle-chocolate-truffle-cake.jpg"
-        },
-        {
           "name": "Mango (seasonal)",
           "price": 600,
           "unit": "per 500g",
@@ -319,6 +308,17 @@ window.SITE = {
             "new"
           ],
           "image": "images/specials-almond-caramel-cake.jpg"
+        },
+        {
+          "name": "Chocolate Truffle Cake",
+          "price": 1000,
+          "unit": "per 500g",
+          "desc": "Layers of chocolate sponge and silky truffle ganache — celebration-grade.",
+          "tags": [
+            "bestseller",
+            "signature"
+          ],
+          "image": "images/brownies-truffle-chocolate-truffle-cake.jpg"
         }
       ]
     },
@@ -328,7 +328,7 @@ window.SITE = {
       "kicker": "freshly baked on order ",
       "blurb": "Buttery loaf-style cakes made for chai-time — no frosting, all comfort.",
       "unit": "per 250g",
-      "note": "Priced per 250g · Sugar-free options available",
+      "note": "Sugar-free options available",
       "image": "images/dry-cakes-vanilla.jpg",
       "items": [
         {
@@ -467,6 +467,26 @@ window.SITE = {
           "image": "images/cheesecakes-new-york.jpg"
         },
         {
+          "name": "Lotus Biscoff cheesecake",
+          "price": 1200,
+          "unit": "per 500g",
+          "desc": "Caramel-spiced Biscoff swirl over a cookie crumb base.",
+          "tags": [
+            "bestseller"
+          ],
+          "image": "images/cheesecakes-lotus-biscoff.jpg"
+        },
+        {
+          "name": "Blueberry cheesecake",
+          "price": 1200,
+          "unit": "per 500g",
+          "desc": "Tangy blueberry compote rippled through silky cheese.",
+          "tags": [
+            "bestseller"
+          ],
+          "image": "images/cheesecakes-blueberry.jpg"
+        },
+        {
           "name": "Fig & Mawa cheesecake",
           "price": 1200,
           "unit": "per 500g",
@@ -485,16 +505,6 @@ window.SITE = {
           "image": "images/cheesecakes-rasmalai.jpg"
         },
         {
-          "name": "Lotus Biscoff cheesecake",
-          "price": 1200,
-          "unit": "per 500g",
-          "desc": "Caramel-spiced Biscoff swirl over a cookie crumb base.",
-          "tags": [
-            "bestseller"
-          ],
-          "image": "images/cheesecakes-lotus-biscoff.jpg"
-        },
-        {
           "name": "Caramel Popcorn cheesecake",
           "price": 1200,
           "unit": "per 500g",
@@ -503,16 +513,6 @@ window.SITE = {
             "new"
           ],
           "image": "images/cheesecakes-caramel-popcorn.jpg"
-        },
-        {
-          "name": "Blueberry cheesecake",
-          "price": 1200,
-          "unit": "per 500g",
-          "desc": "Tangy blueberry compote rippled through silky cheese.",
-          "tags": [
-            "bestseller"
-          ],
-          "image": "images/cheesecakes-blueberry.jpg"
         },
         {
           "name": "Strawberry cheesecake",
@@ -594,11 +594,11 @@ window.SITE = {
     },
     {
       "id": "cookies",
-      "name": "Crispy Cookies",
+      "name": "Crunchy Cookies",
       "kicker": "The Cookie box",
       "blurb": "Baked in small batches — buttery, crumbly and dangerously moreish.",
       "unit": "per 250g",
-      "note": "Priced per 250g · Sugar-free options available",
+      "note": "Sugar-free options available",
       "image": "images/cookies-nankhatai.jpg",
       "items": [
         {
