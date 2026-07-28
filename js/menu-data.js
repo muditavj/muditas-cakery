@@ -9,11 +9,12 @@ window.SITE = {
   "contact": {
     "phone": "9588890392",
     "whatsapp": "919588890392",
-    "address": "191, Sabzibazar, Nayapura",
+    "address": "191, Sabzibazar, Nayapura behind chaman hotel",
     "instagram": "@muditas_cakery",
     "instagramUrl": "https://www.instagram.com/muditas_cakery"
   },
   "notes": [
+    "please do follow us on Instagram ",
     "Please order at least 1–2 days in advance.",
     "Cheesecake orders require at least 3 days' notice.",
     "Sugar-free options available on most cakes & cookies.",
@@ -24,7 +25,7 @@ window.SITE = {
     "heroPill": "Freshly Baked · Home Bakery",
     "egglessBadge": "100% Eggless bakery",
     "searchPlaceholder": "Search cakes, cookies, breads…",
-    "galleryTitle": "Our Gallery",
+    "galleryTitle": "these are some of our customized cakes which we made specially on order and this is our USP. ",
     "faqTitle": "Frequently Asked"
   },
   "story": {
@@ -105,18 +106,15 @@ window.SITE = {
     }
   ],
   "gallery": [
-    "images/cheesecakes-burnt-basque.jpg",
-    "images/signature-cakes-black-forest.jpg",
-    "images/brownies-truffle-chocolate-truffle-cake.jpg",
-    "images/doughnuts-rolls-honey-cinnamon-rolls.jpg",
-    "images/cheesecakes-kunafa.jpg",
-    "images/signature-cakes-strawberry.jpg",
-    "images/cookies-chocolate.jpg",
-    "images/specials-banto-cakes.jpg",
-    "images/cheesecakes-mango.jpg",
-    "images/breads-focaccia.jpg",
-    "images/signature-cakes-chocolate-nutella.jpg",
-    "images/specials-cupcakes.jpg"
+    "images/gallery-1785229699212.jpg",
+    "images/gallery-1785229742642.jpg",
+    "images/gallery-1785229748582.jpg",
+    "images/gallery-1785229753842.jpg",
+    "images/gallery-1785229766057.jpg",
+    "images/gallery-1785229774249.jpg",
+    "images/gallery-1785229781125.jpg",
+    "images/gallery-1785229790150.jpg",
+    "images/gallery-1785229800066.jpg"
   ],
   "categories": [
     {
