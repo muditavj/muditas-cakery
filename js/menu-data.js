@@ -40,7 +40,7 @@ window.SITE = {
         "l": "Eggless, always"
       },
       {
-        "n": "500+",
+        "n": "500+ ",
         "l": "Loyal customers "
       },
       {
@@ -48,7 +48,7 @@ window.SITE = {
         "l": "Days' notice"
       }
     ],
-    "image": "images/about-1785230630227.jpg"
+    "image": "images/about-1785231035467.jpg"
   },
   "howToOrder": {
     "kicker": "How to Order",
@@ -125,7 +125,7 @@ window.SITE = {
       "kicker": "all flavours available with your personal customization ",
       "blurb": "Soft, moist sponge layered and iced by hand. Choose your flavour — we bake it fresh for your day.",
       "unit": "per 500g",
-      "note": "Please order 1–2 days prior",
+      "note": "Priced per 500g · Please order 1–2 days prior",
       "image": "images/signature-cakes-vanilla.jpg",
       "items": [
         {
@@ -328,7 +328,7 @@ window.SITE = {
       "kicker": "freshly baked on order ",
       "blurb": "Buttery loaf-style cakes made for chai-time — no frosting, all comfort.",
       "unit": "per 250g",
-      "note": " Sugar-free options available",
+      "note": "Priced per 250g · Sugar-free options available",
       "image": "images/dry-cakes-vanilla.jpg",
       "items": [
         {
@@ -594,11 +594,11 @@ window.SITE = {
     },
     {
       "id": "cookies",
-      "name": "Crunchy Cookies",
+      "name": "Crispy Cookies",
       "kicker": "The Cookie box",
       "blurb": "Baked in small batches — buttery, crumbly and dangerously moreish.",
       "unit": "per 250g",
-      "note": " Sugar-free options available",
+      "note": "Priced per 250g · Sugar-free options available",
       "image": "images/cookies-nankhatai.jpg",
       "items": [
         {
