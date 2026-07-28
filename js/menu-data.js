@@ -8,7 +8,7 @@ window.SITE = {
   },
   "contact": {
     "phone": "9588890392",
-    "whatsapp": "919588890392",
+    "whatsapp": "9588890392",
     "address": "191, Sabzibazar, Nayapura behind chaman hotel",
     "instagram": "@muditas_cakery",
     "instagramUrl": "https://www.instagram.com/muditas_cakery"
