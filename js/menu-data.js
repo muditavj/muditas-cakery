@@ -24,8 +24,8 @@ window.SITE = {
     "heroPill": "Freshly Baked · Home Bakery",
     "egglessBadge": "100% Eggless",
     "searchPlaceholder": "Search cakes, cookies, breads…",
-    "galleryTitle": "Achievements and customised cakes",
-    "faqTitle": "Frequently Asked"
+    "galleryTitle": "Cake diaries ",
+    "faqTitle": "Frequently Asked questions "
   },
   "story": {
     "kicker": "Our Story",
@@ -60,15 +60,15 @@ window.SITE = {
       },
       {
         "t": "Message us",
-        "d": "Send your choice, size and date on WhatsApp — or give us a call."
+        "d": "Send your choice design, flavor, size and date on WhatsApp — or give us a call."
       },
       {
         "t": "Confirm the details",
         "d": "We'll confirm price, timing and any customisation, then take your order."
       },
       {
-        "t": "Fresh-baked & ready",
-        "d": "Collect from our kitchen, or ask about local delivery on your day."
+        "t": "Payment options ",
+        "d": "Only prepaid orders are acceptable, or cash on take away. "
       }
     ],
     "delivery": [
@@ -85,7 +85,7 @@ window.SITE = {
     },
     {
       "q": "Are your cakes eggless?",
-      "a": "Yes — 100% eggless, always. Every cake and bake at Mudita's Cakery is made completely without eggs; being a pure eggless bakery is exactly what we specialise in. Sugar-free options are also available on most items — just ask."
+      "a": "Yes — 100% eggless, always. Every cake and bake at Mudita's Cakery is made completely eggless; being a pure eggless bakery is exactly what we specialise in. Sugar-free options are also available on most items — just ask."
     },
     {
       "q": "How do I place an order?",
@@ -93,22 +93,33 @@ window.SITE = {
     },
     {
       "q": "Can I customise the flavour, size or design?",
-      "a": "Absolutely. Tell us the occasion and what you have in mind — we'll tailor the cake to you. Custom sizes beyond the menu are available on request."
+      "a": "Absolutely. Tell us the occasion and what you have in mind — we'll design the cake to you. Custom sizes beyond the menu are available on request."
     },
     {
       "q": "Do you deliver? And is their any delivery fee",
-      "a": "Pickup is from our kitchen in Nayapura. Local delivery is available on request — please share your area when ordering so we can confirm. And yes we take delivery fee"
+      "a": "Pickup is from our kitchen in Nayapura. Local delivery is available on request — please share your area when ordering so we can confirm. And yes we take delivery fee if depends on your location "
     },
     {
-      "q": "How are prices calculated?",
-      "a": "Cakes are priced per 500g and cookies per 250g unless a size is listed. Boxes and loaves are priced as shown. Custom sizes are quoted on request."
+      "q": "Can we pay after delivery or some days later ",
+      "a": "We’re a prepaid bakery 💕\nPayment via online or cash on takeaway \nWe’ll bake your order once payment is done."
     }
   ],
   "gallery": [
     "images/gallery-1785254324378.jpg",
     "images/gallery-1785254349210.jpg",
     "images/gallery-1785254368758.jpg",
-    "images/gallery-1785254381780.jpg"
+    "images/gallery-1785254381780.jpg",
+    "images/gallery-1785300825872.jpg",
+    "images/gallery-1785300829673.jpg",
+    "images/gallery-1785300832401.jpg",
+    "images/gallery-1785300837408.jpg",
+    "images/gallery-1785300840712.jpg",
+    "images/gallery-1785300845054.jpg",
+    "images/gallery-1785300849817.jpg",
+    "images/gallery-1785300853234.jpg",
+    "images/gallery-1785300856563.jpg",
+    "images/gallery-1785300862069.jpg",
+    "images/gallery-1785300865337.jpg"
   ],
   "categories": [
     {
