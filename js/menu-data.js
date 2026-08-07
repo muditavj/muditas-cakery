@@ -132,7 +132,13 @@ window.SITE = {
     "images/gallery-1786087231533.jpg",
     "images/gallery-1786087235750.jpg",
     "images/gallery-1786087241237.jpg",
-    "images/gallery-1786087245662.jpg"
+    "images/gallery-1786087245662.jpg",
+    "images/gallery-1786087290176.jpg",
+    "images/gallery-1786087295489.jpg",
+    "images/gallery-1786087298629.jpg",
+    "images/gallery-1786087302450.jpg",
+    "images/gallery-1786087306722.jpg",
+    "images/gallery-1786087310075.jpg"
   ],
   "categories": [
     {
