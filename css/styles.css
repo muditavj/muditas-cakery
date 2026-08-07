@@ -21,6 +21,7 @@
   --orange: #ff7a45;
   --blue:   #46b6ff;
   --wa:     #22c55e; --wa-d:#16a34a;
+  --fssai:  #2f9e6b;
   --brand-cherry:#c0304a;
 
   /* logo artwork — the off-register colour under the drawn cake */
@@ -216,6 +217,17 @@ body.sheet-open .burger i:nth-child(3){ transform:translateY(-6px) rotate(-45deg
 .deckdot{ width:8px; height:8px; border-radius:50%; background:var(--line); transition:width .35s var(--bounce), background .3s; }
 .deckdot.is-active{ width:24px; border-radius:100px; background:var(--pink); }
 .deckhint{ text-align:center; color:var(--ink-faint); font-size:.82rem; margin-top:.7rem; }
+
+/* food-safety mark under the menu deck */
+.fssai{ display:flex; align-items:center; gap:.85rem; width:max-content; max-width:100%;
+  margin:clamp(1.6rem,5vw,2.4rem) auto 0; padding:.7rem 1.25rem .7rem .95rem;
+  background:var(--surface); border:1px solid var(--line); border-radius:100px;
+  box-shadow:0 1px 2px rgba(42,33,28,.03), 0 12px 28px -22px rgba(42,33,28,.5); }
+.fssai__seal{ flex:none; width:30px; height:30px; color:var(--fssai); }
+.fssai__seal svg{ width:100%; height:100%; display:block; }
+.fssai__txt{ display:flex; flex-direction:column; line-height:1.25; min-width:0; }
+.fssai__txt b{ font-size:.84rem; font-weight:600; letter-spacing:.01em; color:var(--ink); }
+.fssai__txt em{ font-style:normal; font-size:.7rem; color:var(--ink-faint); letter-spacing:.02em; }
 
 .home__links{ display:flex; flex-wrap:wrap; gap:.6rem; justify-content:center; margin-top:clamp(1.6rem,5vw,2.6rem); }
 .home__links a{ font-size:.8rem; font-weight:600; color:var(--ink-soft); background:var(--bg-2); border-radius:100px; padding:.55rem 1.1rem; transition:transform .3s var(--bounce), color .3s; }

@@ -117,6 +117,28 @@
   /* ============================================================ VIEWS */
 
   /* ---- HOME ---- */
+  // Food-safety mark. The licence number only shows once it's filled in via Admin.
+  function fssaiHTML() {
+    const lic = (SITE.contact && SITE.contact.fssai || "").trim();
+    return `
+      <div class="fssai stagger">
+        <span class="fssai__seal" aria-hidden="true">
+          <svg viewBox="0 0 44 44" fill="none">
+            <path d="M22 3.4 38.2 9v13.1c0 8.5-6.4 15.6-16.2 18.5C12.2 37.7 5.8 30.6 5.8 22.1V9z"
+                  fill="currentColor" opacity=".1"/>
+            <path d="M22 3.4 38.2 9v13.1c0 8.5-6.4 15.6-16.2 18.5C12.2 37.7 5.8 30.6 5.8 22.1V9z"
+                  stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+            <path d="m15.4 21.8 4.8 4.9 8.7-9.4" stroke="currentColor" stroke-width="2.6"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="fssai__txt">
+          <b>FSSAI Registered</b>
+          <em>${lic ? `Lic. No. ${esc(lic)}` : "Licensed home kitchen · food-safety compliant"}</em>
+        </span>
+      </div>`;
+  }
+
   function viewHome() {
     if (layout === "tabs") return viewTabbed(SITE.categories[0]);
     if (layout === "accordion") return viewAccordion(null);
@@ -162,6 +184,7 @@
         <div class="deck" id="deck">${cards}</div>
         <div class="deckdots" id="deckdots"></div>
         <p class="deckhint">Swipe sideways, or tap the arrows, to see all ${SITE.categories.length} categories</p>
+        ${fssaiHTML()}
         <div class="home__links">
           <a href="#about" data-link>Our Story</a>
           <a href="#howto" data-link>How to Order</a>

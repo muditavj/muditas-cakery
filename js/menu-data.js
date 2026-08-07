@@ -11,7 +11,8 @@ window.SITE = {
     "whatsapp": "919588890392",
     "address": "191, Sabzibazar, Nayapura behind chaman hotel",
     "instagram": "@muditas_cakery",
-    "instagramUrl": "https://www.instagram.com/muditas_cakery"
+    "instagramUrl": "https://www.instagram.com/muditas_cakery",
+    "fssai": ""
   },
   "notes": [
     "Please order at least 1–2 days in advance.",
