@@ -199,8 +199,9 @@
   <div class="toast" id="toast"></div>
 
   <script src="js/menu-data.js"></script>
-  <!-- endpoint only; admin deliberately does not load js/track.js, so your own visits aren't counted -->
-  <script src="js/analytics-config.js"></script>
+  <!-- endpoint only; admin deliberately does not load js/track.js, so your own visits aren't counted.
+       Never cached: a stale copy silently switches tracking off. -->
+  <script>document.write('<scr'+'ipt src="js/analytics-config.js?v='+Date.now()+'"><\/scr'+'ipt>');</script>
   <script>
   (function(){
     "use strict";
@@ -236,8 +237,14 @@
       var p=$("#panel"); var h="";
       if(anTimer){ clearInterval(anTimer); anTimer=null; }
       if(active==="analytics"){
-        p.innerHTML=viewAnalytics(); loadStats();
-        anTimer=setInterval(function(){ if(active==="analytics") loadStats(); },60000);
+        // Surface a render failure instead of silently leaving the last tab's content on screen.
+        try{
+          p.innerHTML=viewAnalytics(); loadStats();
+          anTimer=setInterval(function(){ if(active==="analytics") loadStats(); },60000);
+        }catch(e){
+          p.innerHTML='<h2 class="sec">Analytics</h2><div class="chartcard"><p class="an-empty">'+
+            'Something went wrong drawing this page.<br><br><code>'+esc((e&&e.message)||e)+'</code></p></div>';
+        }
         return;
       }
       if(active==="items") h=viewItems();
@@ -838,10 +845,10 @@
       return '<div id="anBody"><p class="an-empty">Loading your numbers…</p></div>';
     }
 
+    /* renderPanel owns anTimer — don't start one here too, or each call orphans
+       the previous interval and the refresh rate creeps upward. */
     function loadStats(){
       if(!anEP()||!anKey()) return;
-      if(anTimer) clearInterval(anTimer);
-      anTimer=setInterval(function(){ if(active==="analytics") loadStats(); },60000);
       fetch(anEP()+"/stats?_="+Date.now(),{headers:{"X-Cakery-Key":anKey()},cache:"no-store"})
         .then(function(r){
           if(r.status===401) throw new Error("That stats password wasn't right. Sign out of analytics and try again.");
