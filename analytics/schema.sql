@@ -14,10 +14,10 @@ CREATE TABLE IF NOT EXISTS events (
   day     TEXT    NOT NULL,   -- YYYY-MM-DD in IST
   hour    INTEGER NOT NULL,   -- 0-23 IST
   dow     INTEGER NOT NULL,   -- 0=Sun, IST
-  type    TEXT    NOT NULL,   -- view | order_click | search | tel | instagram
+  type    TEXT    NOT NULL,   -- view | order_click | search | tel | instagram | dwell
   path    TEXT,               -- hash route, e.g. #item/truffle-cake
   label   TEXT,               -- item slug, category id, or search term
-  num     INTEGER,            -- search result count
+  num     INTEGER,            -- search result count, or seconds spent for 'dwell'
   vid     TEXT    NOT NULL,
   is_new  INTEGER NOT NULL DEFAULT 0,  -- 1 when this vid was seen for the first time
   ref     TEXT,               -- referring hostname, '' for direct

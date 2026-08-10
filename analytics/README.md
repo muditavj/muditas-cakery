@@ -48,6 +48,26 @@ window.CAKERY_ANALYTICS = { endpoint: "https://cakery-analytics.<you>.workers.de
 Commit and push, open Admin → 📊 Analytics, paste your `STATS_KEY` once, and the
 numbers start filling in.
 
+## Setting it up through the Cloudflare website instead
+
+`wrangler login` needs a browser round-trip that is easy to have time out. Everything
+above can be done by clicking instead, and that is how this one was actually set up:
+
+1. **Storage & Databases → D1 SQLite Database → Create**, named `cakery-analytics`,
+   then its **Console** tab to create the tables.
+   The console is a *single-line* box: it strips newlines, which turns a leading
+   `--` comment into a comment over the whole file and fails with "Requests without
+   any query are not supported." Paste one statement at a time, without comments.
+2. **Compute → Workers & Pages → Create → Start with Hello World**, named
+   `cakery-analytics`, then **Edit code** and paste `worker.js` over the template.
+   (Not "Workers for Platforms" — that is a paid product and not this.)
+3. **Bindings** tab → **Add binding → D1 database**, variable name `DB`.
+4. **Settings** tab → **Variables and secrets**: `ALLOWED_ORIGINS` as Text,
+   `STATS_KEY` as **Secret**.
+
+Check it works by opening the Worker URL — `Not found` is the healthy response for
+the root path, since only `/e` and `/stats` are routed.
+
 ## Notes
 
 - `ALLOWED_ORIGINS` in `wrangler.toml` limits who may post events. Add

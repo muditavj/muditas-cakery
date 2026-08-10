@@ -9,7 +9,7 @@ ALLOWED_ORIGINS = "https://muditavj.github.io"
 [[d1_databases]]
 binding = "DB"
 database_name = "cakery-analytics"
-database_id = "PASTE_DATABASE_ID_AFTER_CREATE"
+database_id = "5648c324-7f9e-4b3b-bb4b-8f4a2cbe2d9f"
 
 # Nightly prune of events older than 400 days.
 [triggers]
