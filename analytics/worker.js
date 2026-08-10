@@ -2,7 +2,8 @@
  * Mudita's Cakery — analytics collector + read API.
  *
  *   POST /e       collect one event. Public, called by js/track.js.
- *   GET  /stats   aggregated dashboard payload. Needs the X-Cakery-Key header.
+ *   GET  /stats   aggregated dashboard payload. Also public — anyone with the
+ *                 Worker URL can read the numbers, by choice (no password).
  *
  * Days and hours are bucketed in IST (fixed +05:30, no DST) so "today" means
  * today in Nayapura rather than in UTC.
@@ -27,7 +28,7 @@ function cors(origin, allowed) {
   return {
     "Access-Control-Allow-Origin": ok,
     "Access-Control-Allow-Methods": "GET,POST,OPTIONS",
-    "Access-Control-Allow-Headers": "Content-Type,X-Cakery-Key",
+    "Access-Control-Allow-Headers": "Content-Type",
     "Access-Control-Max-Age": "86400",
   };
 }
@@ -111,10 +112,6 @@ async function collect(request, env, ctx, head) {
 }
 
 async function stats(request, env, head) {
-  if (!env.STATS_KEY || request.headers.get("X-Cakery-Key") !== env.STATS_KEY) {
-    return json({ error: "unauthorized" }, head, 401);
-  }
-
   const now = Date.now();
   const today = istDay(now);
   const yday = istDay(now, 1);

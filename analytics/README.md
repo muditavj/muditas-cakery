@@ -29,12 +29,7 @@ npx wrangler d1 create cakery-analytics
 # 2. Create the tables
 npx wrangler d1 execute cakery-analytics --remote --file=schema.sql
 
-# 3. Pick a password for reading your stats, then set it as a secret.
-#    Type any long random phrase when prompted — you'll paste the same one
-#    into the Admin → Analytics tab once.
-npx wrangler secret put STATS_KEY
-
-# 4. Deploy
+# 3. Deploy
 npx wrangler deploy
 #    → copy the https://cakery-analytics.<you>.workers.dev URL it prints
 ```
@@ -45,8 +40,9 @@ Then paste that Worker URL into **`js/analytics-config.js`**:
 window.CAKERY_ANALYTICS = { endpoint: "https://cakery-analytics.<you>.workers.dev" };
 ```
 
-Commit and push, open Admin → 📊 Analytics, paste your `STATS_KEY` once, and the
-numbers start filling in.
+Commit and push, then open Admin → 📊 Analytics — the numbers start filling in on
+their own. There is no stats password: `/stats` is open, so anyone who knows the
+Worker URL can read the numbers.
 
 ## Setting it up through the Cloudflare website instead
 
@@ -62,8 +58,7 @@ above can be done by clicking instead, and that is how this one was actually set
    `cakery-analytics`, then **Edit code** and paste `worker.js` over the template.
    (Not "Workers for Platforms" — that is a paid product and not this.)
 3. **Bindings** tab → **Add binding → D1 database**, variable name `DB`.
-4. **Settings** tab → **Variables and secrets**: `ALLOWED_ORIGINS` as Text,
-   `STATS_KEY` as **Secret**.
+4. **Settings** tab → **Variables and secrets**: `ALLOWED_ORIGINS` as Text.
 
 Check it works by opening the Worker URL — `Not found` is the healthy response for
 the root path, since only `/e` and `/stats` are routed.
