@@ -216,7 +216,7 @@
               <div class="rrow__meta">${priceHTML}</div>
               <div class="rrow__actions">
                 <a class="btn-sm view" href="#item/${item._slug}">View details</a>
-                <a class="btn-sm order" href="${waItem(item)}" target="_blank" rel="noopener">Order</a>
+                <a class="btn-sm order" href="${waItem(item)}" data-item="${item._slug}" target="_blank" rel="noopener">Order</a>
               </div>
             </div>
           </article>`;
@@ -378,7 +378,7 @@
             ${item.desc ? `<p class="detail__lead">${esc(item.desc)}</p>` : ""}
             <div class="detail__price">${esc(from)}${unit ? `<small>${esc(unit)}</small>` : ""}</div>
             <div class="detail__buy">
-              <a class="btn btn--wa magnetic" href="${waItem(item)}" target="_blank" rel="noopener">
+              <a class="btn btn--wa magnetic" href="${waItem(item)}" data-item="${item._slug}" target="_blank" rel="noopener">
                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.6-.8-2.7-1.5-3.8-3.4-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5s-.7-1.6-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2A10 10 0 002 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.3A10 10 0 1012 2z"/></svg>
                 Order on WhatsApp
               </a>
@@ -417,6 +417,7 @@
       const term = q.value.trim().toLowerCase();
       if (!term) { results.innerHTML = `<p class="search__hint">Start typing to find your treat 🍪</p>`; return; }
       const hits = ALL.filter(({ item }) => item.name.toLowerCase().includes(term) || (item.desc || "").toLowerCase().includes(term));
+      if (window.cakeryTrackSearch) window.cakeryTrackSearch(term, hits.length);
       if (!hits.length) { results.innerHTML = `<p class="search__hint">No matches for “${esc(term)}” 🤔<br>Try “chocolate”, “bread” or “eggless”.</p>`; return; }
       results.innerHTML = `<p class="search__count">${hits.length} result${hits.length > 1 ? "s" : ""}</p>` +
         hits.map(({ item, cat }) => `
