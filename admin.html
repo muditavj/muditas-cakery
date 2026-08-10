@@ -209,7 +209,7 @@
     var API="https://api.github.com/repos/"+OWNER+"/"+REPO+"/contents/";
     var $=function(s){return document.querySelector(s)}, $$=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
     var token=localStorage.getItem("cakery_gh_token")||"";
-    var S=null, dirty=false, active="items", editing=null, pending={}, previews={};
+    var S=null, dirty=false, active="analytics", editing=null, pending={}, previews={};
 
     function slugify(s){ return String(s||"").toLowerCase().replace(/["'’]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/(^-|-$)/g,""); }
     function clone(o){ return JSON.parse(JSON.stringify(o)); }
@@ -350,7 +350,6 @@
     var AN=null, anRange="hours", anTable=false, anTimer=null, anErr="";
 
     function anEP(){ return String(((window.CAKERY_ANALYTICS||{}).endpoint)||"").replace(/\/+$/,""); }
-    function anKey(){ return localStorage.getItem("cakery_stats_key")||""; }
     function nf(n){ return Number(n||0).toLocaleString("en-IN"); }
     function istD(ts){ return new Date(ts+IST); }
     function dayKey(ts){ return istD(ts).toISOString().slice(0,10); }
@@ -617,21 +616,16 @@
         '<div class="chartcard"><p class="an-empty">Visitor tracking isn\'t switched on yet.<br><br>'+
         'The counter needs to be published once (see <b>analytics/README</b> in your repo), then paste its web address into '+
         '<b>js/analytics-config.js</b>. After that this page fills in on its own.</p></div>';
-      if(!anKey()) return '<h2 class="sec">Analytics</h2>'+
-        '<div class="chartcard"><h3>One-time setup 🔑</h3>'+
-        '<p class="sub">Paste the stats password you set when publishing the counter (the <b>STATS_KEY</b> secret). It stays on this device.</p>'+
-        '<input id="anKeyIn" type="password" placeholder="stats password" autocomplete="off">'+
-        '<div style="margin-top:.7rem"><button class="btn btn--primary" data-ankey="1">Save &amp; show my numbers</button></div></div>';
       return '<div id="anBody"><p class="an-empty">Loading your numbers…</p></div>';
     }
 
     /* renderPanel owns anTimer — don't start one here too, or each call orphans
        the previous interval and the refresh rate creeps upward. */
     function loadStats(){
-      if(!anEP()||!anKey()) return;
-      fetch(anEP()+"/stats?_="+Date.now(),{headers:{"X-Cakery-Key":anKey()},cache:"no-store"})
+      if(!anEP()) return;
+      fetch(anEP()+"/stats?_="+Date.now(),{cache:"no-store"})
         .then(function(r){
-          if(r.status===401) throw new Error("That stats password wasn't right. Sign out of analytics and try again.");
+          if(r.status===401) throw new Error("The visitor counter is still set to ask for a password. Re-publish analytics/worker.js to open it up.");
           if(!r.ok) throw new Error("Couldn't reach the visitor counter ("+r.status+").");
           return r.json();
         })
@@ -643,7 +637,7 @@
       var b=$("#anBody"); if(!b) return;
       if(anErr&&!AN){
         b.innerHTML='<h2 class="sec">Analytics</h2><div class="chartcard"><p class="an-empty">'+esc(anErr)+
-          '<br><br><button class="btn" data-anforget="1">Re-enter stats password</button></p></div>';
+          '<br><br><button class="btn" data-anretry="1">Try again</button></p></div>';
         return;
       }
       b.innerHTML=(anErr?'<p class="hint" style="color:var(--berry);text-align:center">'+esc(anErr)+'</p>':'')+renderAnalytics(AN);
@@ -723,10 +717,7 @@
       if(t.dataset.tab){ if(t.dataset.tab!=="analytics"&&anTimer){ clearInterval(anTimer); anTimer=null; } active=t.dataset.tab; renderTabs(); renderPanel(); window.scrollTo(0,0); return; }
       if(t.dataset.anrange){ anRange=t.dataset.anrange; paintAnalytics(); return; }
       if(t.dataset.antable){ anTable=!anTable; paintAnalytics(); return; }
-      if(t.dataset.ankey){ var kv=($("#anKeyIn")||{}).value; kv=(kv||"").trim();
-        if(!kv){ toast("Paste the stats password first",true); return; }
-        localStorage.setItem("cakery_stats_key",kv); renderPanel(); return; }
-      if(t.dataset.anforget){ localStorage.removeItem("cakery_stats_key"); AN=null; anErr=""; renderPanel(); return; }
+      if(t.dataset.anretry){ AN=null; anErr=""; renderPanel(); return; }
       if(t.dataset.mvitem){ var mi=t.dataset.mvitem.split("."), mci=+mi[0], mii=+mi[1], mdir=mi[2], marr=S.categories[mci].items; if(mdir==="top"){ if(mii>0) marr.unshift(marr.splice(mii,1)[0]); } else move(marr,mii,mdir==="up"?mii-1:mii+1); renderPanel(); markDirty(); return; }
       if(t.dataset.mvcat){ var mc=t.dataset.mvcat.split("."), mcx=+mc[0], mcd=mc[1]; if(mcd==="top"){ if(mcx>0) S.categories.unshift(S.categories.splice(mcx,1)[0]); } else move(S.categories,mcx,mcd==="up"?mcx-1:mcx+1); renderPanel(); markDirty(); return; }
       if(t.dataset.edit){ var a=t.dataset.edit.split("."); openEditor(+a[0],+a[1]); return; }
